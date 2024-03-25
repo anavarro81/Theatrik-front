@@ -13,7 +13,9 @@ const BookingBtn = ({text, variant, url, icon, clase}) => {
 
 
   return (
-    <button className={buttonClasses}> <a href={url}> <Icon type={icon} />{text} </a> </button>
+    <button className={buttonClasses}>
+      <a href={url}> <Icon type={icon} /> <span className="hidden md:inline">{text}</span>
+</a> </button>
   )
 
 

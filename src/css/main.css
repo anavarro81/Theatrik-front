@@ -15,9 +15,8 @@
     overflow-hidden
     md:flex-shrink-0
     font-semibold
-    m-4
+    m-0 /*aplica margin 0 */
     justify-between
-    rounded-r-md
 }
 
 .hidden.md\:inline-block {
