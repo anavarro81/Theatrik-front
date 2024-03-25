@@ -6,7 +6,8 @@ const Title = ({type, variant, text}) => {
 
     const titleClasses = classnames('title', {
         "text-orangeDesing": variant === 'orange',
-        "text-greyDesing": variant === 'gray'        
+        "text-greyDesing": variant === 'gray',
+        "text-white": variant === 'white'        
       })
 
 
