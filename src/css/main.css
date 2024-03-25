@@ -2,11 +2,30 @@
 @tailwind components;
 
 .title {
-    @apply  text-black
+    @apply text-black
 }
 
 .button {
-    @apply rounded-lg text-sm px-10 py-2.5 cursor-pointer 
+    @apply rounded-lg text-sm px-10 py-2.5 cursor-pointer
+}
+
+.filterBar {
+    @apply flex
+    shadow-md
+    overflow-hidden
+    md:flex-shrink-0
+    font-semibold
+    m-4
+    justify-between
+    rounded-r-md
+}
+
+.hidden.md\:inline-block {
+  display: inline-block !important;
+}
+
+.block.md\:hidden {
+  display: none !important;
 }
 
 @tailwind utilities;
