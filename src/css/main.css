@@ -2,7 +2,7 @@
 @tailwind components;
 
 .title {
-    @apply text-2xl text-black
+    @apply  text-black
 }
 
 .button {

@@ -4,12 +4,15 @@ import Icon from './components/atoms/Icon/Icon'
 import Image from './components/atoms/Image/Image'
 import Title from './components/atoms/Title/Title'
 import BookingBtn from './components/atoms/Button/BookingBtn'
-
+import SearchBar from './components/molecules/SearchBar'
+import Header from './components/organisms/Header'
+import PlayCard from './components/molecules/PlayCard'
+import ContainerSlider from './components/organisms/Container/ContainerSlider'
 
 const App = () => {
   return (
     <>
-    <Icon type={"Burger"} />
+    {/* <Icon type={"Burger"} />
     <Icon type={"Map"} />
     <Icon type={"Mail"} />
 
@@ -17,7 +20,14 @@ const App = () => {
 
     <Title type={"H1"} variant={"gray"} text={"TKOMÜN"}/> 
 
-    <BookingBtn text={"Reservar"} variant={"orange"} url={"https://www.google.es/"}/>
+    <BookingBtn text={"Reservar"} variant={"orange"} url={"https://www.google.es/"}/> */}
+
+    <Header placeholder={"Buscar por obra o por asociacion"}/>
+
+    <PlayCard/>
+
+    <ContainerSlider/>
+
 
 </>
   

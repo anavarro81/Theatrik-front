@@ -7,7 +7,7 @@ const Text = ({text, variant}) => {
 
   const textClasses = classnames('text', {
     "text-white": variant === 'white',
-    "text-greyDesing": variant === 'gray'        
+    
   })
 
 
