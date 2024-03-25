@@ -6,13 +6,17 @@ import classnames from "classnames"
 const Text = ({text, variant}) => {
 
   const textClasses = classnames('text', {
-    "text-white": variant === 'white',
+    "text-white ": variant === 'link',
     
   })
 
 
   return (
-    <p className={textClasses}> {text} </p>
+  <>
+    { variant === "noLink" && <p className={textClasses}> {text} </p> }
+    { variant === "link" && <a href="#" className={textClasses}> {text} </a> }
+
+    </>  
   )
 }
 
