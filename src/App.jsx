@@ -7,7 +7,8 @@ import BookingBtn from './components/atoms/Button/BookingBtn'
 import SearchBar from './components/molecules/SearchBar'
 import Header from './components/organisms/Header'
 import PlayCard from './components/molecules/PlayCard'
-import ContainerSlider from './components/organisms/Container/ContainerSlider'
+import ContainerSlider from './components/organisms/FilterBar'
+import FilterBar from './components/organisms/FilterBar'
 
 const App = () => {
   return (
@@ -26,7 +27,7 @@ const App = () => {
 
     <PlayCard/>
 
-    <ContainerSlider/>
+    <FilterBar/>
 
 
 </>
