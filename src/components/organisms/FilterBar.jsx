@@ -10,8 +10,8 @@ const FilterBar = (text, variant, icon) => {
     "underline underline-offset-8": true,
   });
 
-  const filterBtn = classnames(
-    "button relative flex items-center items-center justify-center border border-gray-300 rounded w-20 bg-gray-100",
+  const filterIcon = classnames(
+    "button relative flex items-center justify-items-center items-center justify-center border border-gray-300 rounded w-20 bg-gray-100",
     {
       // Agrega aquí cualquier clase condicional necesaria
     }
@@ -59,14 +59,14 @@ const FilterBar = (text, variant, icon) => {
           Mes 3
         </a>
 
-        <div className={filterBtn}>
+        <div className={filterIcon}>
             <BookingBtn text={"Fecha"} variant={"gray"} icon={"Calendar"} />
         </div>
 
-        <div className={filterBtn}>
+        <div className={filterIcon}>
           <BookingBtn text={"Genero"} variant={"gray"} icon={"Genre"} />
         </div>
-        <div className={filterBtn}>
+        <div className={filterIcon}>
           <BookingBtn text={"Asociacion"} variant={"gray"} icon={"Company"} />
         </div>
 
