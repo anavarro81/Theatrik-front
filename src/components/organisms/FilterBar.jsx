@@ -11,7 +11,7 @@ const FilterBar = (text, variant, icon) => {
   });
 
   const filterIcon = classnames(
-    "button relative flex items-center justify-items-center items-center justify-center border border-gray-300 rounded w-20 bg-gray-100",
+    "button relative flex flex-row items-center justify-items-center items-center justify-center border border-gray-300 rounded w-20 bg-gray-100",
     {
       // Agrega aquí cualquier clase condicional necesaria
     }
@@ -39,25 +39,28 @@ const FilterBar = (text, variant, icon) => {
         </a> */}
 
       {/* con Tailwind */}
+      <div>
+      {/* Filtros por mes: Todo | Octubre | Noviembre | Diciembre */}
       <div className={filterclasses}>
-        <a href="#" className="md:hidden">
-          Todas las obras
-        </a>
-
-        <a href="#" className="hidden md:inline">
+        
+        <a href="#" className="">
           Todo
         </a>
         <a href="#" className="hidden md:inline">
           {" "}
-          Mes 1
+          Octubre
         </a>
         <a href="#" className="hidden md:inline">
           {" "}
-          Mes 2{" "}
+          Noviembre
         </a>
         <a href="#" className="hidden md:inline">
-          Mes 3
+          Diciembre
         </a>
+
+        </div>
+
+        <div className="flex">
 
         <div className={filterIcon}>
             <BookingBtn text={"Fecha"} variant={"gray"} icon={"Calendar"} />
@@ -73,6 +76,7 @@ const FilterBar = (text, variant, icon) => {
         {/* <BookingBtn className={filterBtn} text={"Fecha"} variant={"gray"} icon={"Calendar"} />
         <BookingBtn className={filterBtn} text={"Genero"} variant={"gray"} icon={"Genre"} />
         <BookingBtn className={filterBtn} text={"Asociacion"} variant={"gray"} icon={"Company"} /> */}
+      </div>
       </div>
     </>
   );

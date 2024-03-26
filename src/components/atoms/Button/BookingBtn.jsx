@@ -16,6 +16,7 @@ const BookingBtn = ({text, variant, url, icon, clase}) => {
     <button className={buttonClasses}>
       <a href={url}> <Icon type={icon} />
       <span className="hidden md:inline">{text}</span> {/*hace que el texto del boton desaparezca en tamaño movil */}
+      <p>Genero</p>
       </a>
     </button>
   )
