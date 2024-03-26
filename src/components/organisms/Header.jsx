@@ -6,10 +6,10 @@ const Header = ({placeholder}) => {
   return (
     <>
     
-    <div className='flex flex-row justify-between px-4'>
+    <div className='flex flex-row justify-between px-4 mb-4'>
     <Icon type={"Logo"}/>
-    <div className='flex items-center space-x-4'>
-      <SearchBar placeholder={placeholder}/>
+    <div className='space-x-4'>      
+      <Icon type={"Search"}/>
       <Icon type={"Burger"}/>
     </div>
     </div>
