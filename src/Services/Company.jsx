@@ -1,20 +1,30 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
-import React from 'react'
+import api from "./index";
+import React from "react";
 
-const getAllCompanies = () => {
-    const [name, setName] = useState([]);
+//con .then
+// const listCompanies = () => {
+//   const [name, setName] = useState([]);
 
-    useEffect(() => {
-        axios.get(`http://localhost:5004/play/getAllPlays`).then((res) => {
-            console.log(res.data.name)
-        setName(res.data.name);
-    });
-},[])
+//   useEffect(() => {
+//     api.get('/company/getAll').then((res) => {
+//       console.log(res.data.name);
+//       setName(res.data.name);
+//     });
+//   }, []);
 
-return (
-    <div>{name}</div>
-    )
+//   return <div>{name}</div>;
+// };
+
+// export default listCompanies;
+
+//con await
+export const listCompanies = async () => {
+  const { data } = await api.get("/company/getAll", getAllCompanies /*{
+    headers: {
+      Authorization: localStorage.getItem("token"),
+    },
+  }*/);
+
+  return data; // trae todos los datos de los usuarios
 };
-
-export default getAllCompanies;
