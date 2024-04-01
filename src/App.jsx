@@ -9,6 +9,8 @@ import Header from './components/organisms/Header'
 import PlayCard from './components/molecules/PlayCard'
 import ContainerSlider from './components/organisms/FilterBar'
 import FilterBar from './components/organisms/FilterBar'
+import Links from './components/molecules/Links'
+import { LinkIcon } from '@heroicons/react/20/solid'
 
 const App = () => {
   return (
@@ -27,11 +29,10 @@ const App = () => {
 
     <PlayCard/>
 
+    {/* <Links/> */}
     <FilterBar/>
 
-
-</>
-  
+    </>
 )}
 
 export default App

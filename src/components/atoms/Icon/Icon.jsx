@@ -31,7 +31,6 @@ export default function Icon({type}) {
         {type === "Mail" && <Mail/> }
         
         </>
-           
             
         
     );

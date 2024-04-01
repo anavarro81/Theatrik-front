@@ -2,7 +2,7 @@ import React from 'react'
 import classnames from "classnames"
 import Icon from '../Icon/Icon'
 
-const BookingBtn = ({text, variant, url, icon, clase}) => {
+const BookingBtn = ({text, variant, url, icon}) => {
 
   const buttonClasses = classnames('button', {
     "bg-white w-11/12 ": variant === 'button-playCard',
