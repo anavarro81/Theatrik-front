@@ -163,18 +163,18 @@
 
 
 
-import CompanyFilter from "../molecules/AsociationFilter";
+import AsociationFilter from "../molecules/AsociationFilter";
 import Links from "../molecules/Links";
+import CalendarFilter from "../molecules/CalendarFilter";
 
 export default function FilterBar() {
 
   return (
-    <>
+    <div className="bg-green-200">
       <Links />
-      <CompanyFilter />
-      <CompanyFilter />
-      <CompanyFilter />
-    </>
+      <AsociationFilter/>
+      <CalendarFilter/>
+    </div>
   );
 }
 

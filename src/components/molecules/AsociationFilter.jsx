@@ -69,7 +69,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function FilterBar() {
+export default function AsociationFilter() {
   const [selected, setSelected] = useState(people[3]);
 
   return (
