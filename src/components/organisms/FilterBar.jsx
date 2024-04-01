@@ -166,15 +166,20 @@
 import AsociationFilter from "../molecules/AsociationFilter";
 import Links from "../molecules/Links";
 import CalendarFilter from "../molecules/CalendarFilter";
+import GenderFilter from "../molecules/GenderFilter";
 
 export default function FilterBar() {
 
   return (
-    <div className="bg-green-200">
+    <>
       <Links />
-      <AsociationFilter/>
-      <CalendarFilter/>
-    </div>
+
+      <div className="bg-green-200 flex justify-around items-center w-[90%] mx-auto my-1 ">
+        <AsociationFilter />
+        <CalendarFilter />
+        <GenderFilter />
+      </div>
+    </>
   );
 }
 
