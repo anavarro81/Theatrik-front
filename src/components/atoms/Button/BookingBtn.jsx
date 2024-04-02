@@ -4,9 +4,10 @@ import classnames from "classnames"
 const BookingBtn = ({text, variant, url}) => {
 
   const buttonClasses = classnames('button', {
-    "text-white": variant === 'white',
-    "text-greyDesing": variant === 'gray',
-    "bg-orangeDesing": variant === 'orange'        
+    //"text-white": variant === 'white',
+    "text-greyDesign font-bold bg-white": variant === 'gray',
+    "text-white font-bold bg-orangeDesign ": variant === 'orange',
+    "text-white font-bold bg-transparent hover:underline": variant === 'paginationBtn'       
   })
 
 
