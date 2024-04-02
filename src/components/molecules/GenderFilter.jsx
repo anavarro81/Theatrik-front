@@ -9,14 +9,14 @@ const GenderFilter = () => {
         Genero
       </p> */}
 
-      <label>
-        Pick your favorite fruit:
-        <select name="selectedFruit" defaultValue="orange">
-          <option value="apple">Apple</option>
-          <option value="banana">Banana</option>
-          <option value="orange">Orange</option>
-        </select>
+      <label className="block font-medium leading-6 text-slate-500 mx-0 ">
+        Genero{" "}
       </label>
+      <select name="selectedFruit" defaultValue="orange">
+        <option value="comedia">Comedia</option>
+        <option value="drama">Drama</option>
+        <option value="infantil">Infantil</option>
+      </select>
     </>
   );
 }
