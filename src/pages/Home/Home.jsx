@@ -1,12 +1,12 @@
-import React from 'react'
+import React from 'react';
+import Slider from '../../components/organisms/Slider'
 
 const Home = () => {
+
   return (
-    <div>
-
-    <h1 className="text-orangeDesing"> Hola mundo desde Home!! </h1>
-
-    </div>
+    <>
+      <Slider/>
+    </>
   )
 }
 

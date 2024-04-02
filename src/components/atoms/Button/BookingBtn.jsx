@@ -1,23 +1,22 @@
 import React from 'react'
 import classnames from "classnames"
-import Icon from '../Icon/Icon'
 
-const BookingBtn = ({text, variant, url, icon}) => {
+const BookingBtn = ({text, variant, url}) => {
 
   const buttonClasses = classnames('button', {
+
+    "text-greyDesign font-bold bg-white": variant === 'gray',
+    "text-white font-bold border-none bg-transparent hover:underline": variant === 'paginationBtn',       
     "bg-white w-11/12 ": variant === 'button-playCard',
-    "text-greyDesing": variant === 'gray',
     "bg-orangeDesing w-full": variant === 'orange'        
   })
 
 
-
   return (
     <button className={buttonClasses}>
-      <a href={url}> <Icon type={icon} />
-      <span className="hidden md:inline">{text}</span> {/*hace que el texto del boton desaparezca en tamaño movil */}
-      <p>Genero</p>
-      </a>
+      {/* <a href={url}> */}
+      <p>{text}</p>
+      {/* </a> */}
     </button>
   )
 
