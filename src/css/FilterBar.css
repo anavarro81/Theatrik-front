@@ -1,0 +1,29 @@
+.filterBar {
+    /* Estilos generales */
+}
+
+.all-works {
+    /* Estilos para todas las obras */
+}
+
+.filterBtn {
+    border: 1px solid #ccc;
+    /* Borde sólido color gris */
+}
+
+.show-desktop {
+    display: none;
+    /* Oculta estos elementos en tamaños de pantalla pequeños */
+}
+
+/* Mostrar los enlaces y las imágenes de los botones en pantallas más grandes (tabletas y escritorio) */
+@media (min-width: 768px) {
+    .show-desktop {
+        display: inline;
+        /* Muestra estos elementos en tamaños de pantalla más grandes */
+    }
+
+    .all-works{
+        display: none;
+    }
+}

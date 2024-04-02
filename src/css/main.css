@@ -1,12 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap')
 @tailwind base;
 @tailwind components;
 
 .title {
-    @apply text-2xl text-black
+    @apply text-black
 }
 
 .button {
-    @apply rounded-lg text-sm px-10 py-2.5 cursor-pointer 
+    @apply rounded-lg text-sm px-10 py-2.5 cursor-pointer
+}
+
+.filterBar {
+    @apply flex
+    shadow-md
+    overflow-hidden
+    md:flex-shrink-0
+    font-semibold
+    m-0 /*aplica margin 0 */
+    justify-between
+}
+
+.hidden.md\:inline-block {
+  display: inline-block !important;
+}
+
+.block.md\:hidden {
+  display: none !important;
 }
 
 @tailwind utilities;

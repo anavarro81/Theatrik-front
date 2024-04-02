@@ -1,0 +1,19 @@
+.select-icon {
+    padding-left: 20px; /* Espacio para el icono */
+    background-repeat: no-repeat;
+    background-position: 2px center; /* Posición del icono */
+  }
+  
+  .select-icon option {
+    /* padding-left: 20px; Espacio para el icono */
+    background-color: red;
+  }
+  
+  /* Establecer icono en las opciones */
+  .select-icon option[data-icon] {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/2693/2693507.png');
+    /* Reemplaza 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAfklEQVQ4je2TMQrCQAxF7/RZobDgEkmvByICiKqWVYmFoigslGMiVXOh/Of3FO2ZyZmlGvECdIDMRQhqSi5KdQotD8swDMrhnPDEISzYBOGOGAYrhg4llIpwXNzfyxTUS2M8YiAAAAAElFTkSuQmCC' con la ruta de tu icono */
+    background-size: 16px 16px; /* Tamaño del icono */
+    background-position: 2px center; /* Posición del icono */
+    padding-left: 25px; /* Espacio para el texto después del icono */
+  }
