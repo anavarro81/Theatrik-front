@@ -5,8 +5,8 @@ import classnames from "classnames"
 const Title = ({type, variant, text}) => {
 
     const titleClasses = classnames('title', {
-        "text-orangeDesing": variant === 'orange',
-        "text-greyDesing": variant === 'gray',
+        "text-orangeDesign": variant === 'orange',
+        "text-greyDesign": variant === 'gray',
         "text-white": variant === 'white'        
       })
 

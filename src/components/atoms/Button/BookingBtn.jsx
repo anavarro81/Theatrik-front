@@ -2,11 +2,14 @@ import React from 'react'
 import classnames from "classnames"
 import Icon from '../Icon/Icon'
 
-const BookingBtn = ({text, variant, url, icon, clase}) => {
+const BookingBtn = ({text, variant, url, icon}) => {
 
   const buttonClasses = classnames('button', {
+
+    "text-greyDesign font-bold bg-white": variant === 'gray',
+    //"text-white font-bold bg-orangeDesign ": variant === 'orange',
+    "text-white font-bold bg-transparent hover:underline": variant === 'paginationBtn',       
     "bg-white w-11/12 ": variant === 'button-playCard',
-    "text-greyDesing": variant === 'gray',
     "bg-orangeDesing w-full": variant === 'orange'        
   })
 
@@ -15,8 +18,7 @@ const BookingBtn = ({text, variant, url, icon, clase}) => {
   return (
     <button className={buttonClasses}>
       <a href={url}> <Icon type={icon} />
-      <span className="hidden md:inline">{text}</span> {/*hace que el texto del boton desaparezca en tamaño movil */}
-      <p>Genero</p>
+      <p>{text}</p>
       </a>
     </button>
   )
