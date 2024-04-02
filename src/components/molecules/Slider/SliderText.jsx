@@ -8,8 +8,8 @@ const SliderText = () => {
         <>
             <Title type={"H1"} variant={"white"} text={"Pérdida"}/>
             <Title type={"H2"} variant={"orange"} text={"TKOMÚN"}/>
-            <Text variant={"white"} text={"Viernes 3 de noviembre · 20h"}/>
-            <Text variant={"white"} text={"Auditorio Paco de Lucía, Centro de Arte Alcobendas"}/>
+            <Text type={"noLink"} variant={"white"} text={"Viernes 3 de noviembre · 20h"}/>
+            <Text type={"noLink"} variant={"white"} text={"Auditorio Paco de Lucía, Centro de Arte Alcobendas"}/>
             <BookingBtn text={"Reservar"} variant={"gray"} url={"/"}/>
         </>
     )
