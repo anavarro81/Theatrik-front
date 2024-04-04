@@ -158,36 +158,25 @@
 //   );
 // }
 
-
-
-
-
-
 import AsociationFilter from "../molecules/AsociationFilter";
 import Links from "../molecules/Links";
 import CalendarFilter from "../molecules/CalendarFilter";
 import GenderFilter from "../molecules/GenderFilter";
 
 export default function FilterBar() {
-
   return (
-    <>
-      <Links />
-
-      <div className="bg-green-200 flex justify-around items-center w-[90%] mx-auto my-1 ">
+    <div className="bg-emerald-800 grid grid-rows-2">
+      <div className="bg-gray-200">
+        <Links />
+      </div>
+      <div className="bg-gray-300 flex justify-around ">
         <AsociationFilter />
         <CalendarFilter />
         <GenderFilter />
       </div>
-    </>
+    </div>
   );
 }
 
-
-
-
-
-
-
-
-
+// className = "bg-green-200 flex justify-around items-center w-[90%] mx-auto my-1 ";
+// className = "grid gap-4 grid-cols-1 grid-rows-2 bg-emerald-800";

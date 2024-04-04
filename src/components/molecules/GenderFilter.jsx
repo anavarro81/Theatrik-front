@@ -9,7 +9,7 @@ const GenderFilter = () => {
         Genero
       </p> */}
 
-      <label className="block font-medium leading-6 text-slate-500 mx-0 ">
+      <label>
         Genero{" "}
       </label>
       <select name="selectedFruit" defaultValue="orange">
@@ -22,3 +22,5 @@ const GenderFilter = () => {
 }
 
 export default GenderFilter
+
+// className = "block font-medium leading-6 text-slate-500 mx-0 ";
