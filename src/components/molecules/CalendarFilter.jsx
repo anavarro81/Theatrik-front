@@ -14,13 +14,14 @@ const CalendarFilter = () => {
       <p className="font-medium leading-6 text-slate-500 h-[0rem] flex items-center justify-center">
         Calendario
       </p>
-
-      <DatePicker
-        className="rounded"
-        showIcon
-        selected={startDate}
-        onChange={(date) => setStartDate(date)}
-      />
+      <div className="h-[60px]">
+        <DatePicker
+          className="rounded w-[7rem] h-[26px] "
+          showIcon
+          selected={startDate}
+          onChange={(date) => setStartDate(date)}
+        />
+      </div>
     </div>
   );
 };

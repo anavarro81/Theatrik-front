@@ -11,11 +11,13 @@ const GenderFilter = () => {
       <div className="font-medium leading-6 text-slate-500 h-[2rem] flex items-center justify-center">
         <label>Genero </label>
       </div>
-      <select name="selectedFruit" defaultValue="orange">
-        <option value="comedia">Comedia</option>
-        <option value="drama">Drama</option>
-        <option value="infantil">Infantil</option>
-      </select>
+      <div className=''>
+        <select name="selectedFruit" defaultValue="orange">
+          <option value="comedia">Comedia</option>
+          <option value="drama">Drama</option>
+          <option value="infantil">Infantil</option>
+        </select>
+      </div>
     </div>
   );
 }
