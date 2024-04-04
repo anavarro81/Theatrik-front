@@ -16,7 +16,7 @@ const CalendarFilter = () => {
       </p>
       <div className="h-[60px]">
         <DatePicker
-          className="rounded w-[7rem] h-[26px] "
+          className="rounded w-[7rem] h-[26px] border border-gray-300"
           showIcon
           selected={startDate}
           onChange={(date) => setStartDate(date)}
