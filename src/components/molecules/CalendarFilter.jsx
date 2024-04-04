@@ -10,8 +10,8 @@ const CalendarFilter = () => {
   const [startDate, setStartDate] = useState(new Date());
 
   return (
-    <>
-      <p className=" text-base font-medium leading-6 text-slate-500 text-justify m-px">
+    <div>
+      <p className="font-medium leading-6 text-slate-500 h-[0rem] flex items-center justify-center">
         Calendario
       </p>
 
@@ -21,7 +21,7 @@ const CalendarFilter = () => {
         selected={startDate}
         onChange={(date) => setStartDate(date)}
       />
-    </>
+    </div>
   );
 };
 
