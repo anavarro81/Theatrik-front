@@ -7,7 +7,7 @@ const BookingBtn = ({text, variant, url}) => {
 
     "text-greyDesign font-bold bg-white": variant === 'gray',
     "text-white font-bold border-none bg-transparent hover:underline": variant === 'paginationBtn',       
-    "bg-white w-11/12 ": variant === 'button-playCard',
+    "bg-white w-full ": variant === 'button-playCard',
     "bg-orangeDesing w-full": variant === 'orange'        
   })
 

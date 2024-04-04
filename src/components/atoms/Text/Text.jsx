@@ -9,15 +9,16 @@ const Text = ({text, variant, type}) => {
 
     "text-white": variant === 'white',
     "text-greyDesign": variant === 'gray',        
-    "text-white ": variant === 'link'
+    "text-white underline": variant === 'link'
 
   })
 
 
   return (
   <>
-    { type === "noLink" && <p className={textClasses}> {text} </p> }
-    { type === "link" && <a href="#" className={textClasses}> {text} </a> }
+    { type === "link" ? <a href="#" className={textClasses}> {text} </a> : <p className={textClasses}> {text} </p>}
+
+    
 
     </>  
   )
