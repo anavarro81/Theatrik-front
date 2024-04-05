@@ -1,33 +1,35 @@
 import React from "react";
 import Text from "../atoms/Text/Text";
 import classnames from "classnames";
+import classNames from "classnames";
 
 const Links = (text) => {
-  // Clase de color para los textos de los meses, es la unica forma que encontre que funciones para cambiar el color de cada enlace
-  const colorText = "text-gray-600";
 
-  // //estilos parrafo
-  // const parrafo = classnames(
-  //   "flex justify-center items-center border rounded w-20 h-8 bg-yellow-400",
-  //   {
-  //       // Agrega aquí cualquier clase condicional necesaria
-  //   }
-  // );
+  const textLink = classnames(
+    "flex justify-around items-center border rounded h-8 bg-yellow-400 "
+  );
 
-  // //estilos contenedor
-  // const containerLinks = classnames(
-  //   "flex justify-around items-center w-[90%] mx-auto my-1 bg-blue-200"
-  // );
+  const styleLinks = classnames(
+    "flex justify-center items-center border rounded w-20 h-6  bg-yellow-400"
+  );
 
   return (
-    <div>
-      <Text text={"Octubre"} variant={"gray"}></Text>
-      <Text text={"Noviembre"} variant={"gray"}></Text>
-      <Text text={"Diciembre"} variant={"gray"}></Text>
-
+    <div className="flex justify-around mb-4 h-6">
+      
       <div>
-        <p>Links</p>
+        <Text text={"Octubre"} variant={"gray"} type={"link"} ></Text>
       </div>
+      <div>
+        <Text text={"Diciembre"} variant={"gray"} type={"link"} className={textLink}></Text>
+      </div>
+      <div>
+        <Text text={"Noviembre"} variant={"gray"} type={"link"} className={textLink}></Text>
+      </div>
+    
+      <div className={styleLinks}>
+        <label>Links</label>
+      </div>
+
     </div>
   );
 };
