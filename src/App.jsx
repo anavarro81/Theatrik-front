@@ -5,9 +5,8 @@ import Home from './pages/Home/Home'
 const App = () => {
   return (
     <>
-    <p>Holaaaaa</p>
-  <Home/>
-</>
+      <Home/>
+    </>
   
 )}
 
