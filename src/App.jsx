@@ -1,13 +1,12 @@
-import React from 'react'
-import Home from './pages/Home/Home'
-
+import React from "react";
+import Home from "./pages/Home/Home";
 
 const App = () => {
   return (
     <>
-    Hello
-</>
-  
-)}
+      <Home />
+    </>
+  );
+};
 
-export default App
+export default App;

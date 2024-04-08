@@ -1,12 +1,19 @@
-import React from 'react'
+import React from 'react';
+import Slider from '../../components/organisms/Slider'
+import Headers from '../../components/organisms/Header';
+import FilterBar from '../../components/organisms/FilterBar';
+import  PlayGallery from '../../components/organisms/PlayGallery';
 
 const Home = () => {
+
+  
+
   return (
-    <div>
-
-    <h1 className="text-orangeDesing"> Hola mundo desde Home!! </h1>
-
-    </div>
+    <>
+      <Headers/>
+      <Slider/>
+      <FilterBar/>
+    </>
   )
 }
 
