@@ -1,19 +1,22 @@
 import React from 'react';
 import Slider from '../../components/organisms/Slider'
-import Headers from '../../components/organisms/Header';
 import FilterBar from '../../components/organisms/FilterBar';
 import  PlayGallery from '../../components/organisms/PlayGallery';
+import { useLoaderData } from 'react-router-dom'
+
 
 const Home = () => {
 
-  
+  const plays =  useLoaderData();
+
 
   return (
     <>
-      <Headers/>
+      
       <Slider/>
       <FilterBar/>
-      <PlayGallery/>
+      <PlayGallery plays={plays} />
+
     </>
   )
 }
