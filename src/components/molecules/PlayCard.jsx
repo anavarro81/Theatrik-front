@@ -27,13 +27,14 @@ const PlayCard = ({play}) => {
 
         {/* <div className='flex justify-center'> */}
           <BookingBtn text={"Reservar"} variant={"button-playCard"} url={""} />
+          
         {/* </div> */}
 
 
         <div>
 
           <div className='text-center' >
-             <Text text={"Más información"} variant={"link"} /> 
+          <Text text={"Más información"} variant={"link"} type={'link'} url={`/info/${play._id}`}/>
           </div>
 
         </div>

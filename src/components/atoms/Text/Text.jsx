@@ -3,7 +3,7 @@ import classnames from "classnames"
 
 
 
-const Text = ({text, variant, type}) => {
+const Text = ({text, variant, type, url}) => {
 
   const textClasses = classnames('text', {
 
@@ -16,7 +16,7 @@ const Text = ({text, variant, type}) => {
 
   return (
   <>
-    { type === "link" ? <a href="#" className={textClasses}> {text} </a> : <p className={textClasses}> {text} </p>}
+    { type === "link" ? <a href={url} className={textClasses}> {text} </a> : <p className={textClasses}> {text} </p>}
 
     
 
