@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: "https://anavarro:hFRbVQ7ucfqYni6w@cluster0.byjnzkt.mongodb.net/Theatrik"
+    baseURL: "http://localhost:5004/play/getAllPlays"
 })
 
 export default api

@@ -18,8 +18,8 @@ import React from "react";
 
 // export default listCompanies;
 
-//con await
-export const listCompanies = async () => {
+//con await axios
+export const listAsociacion = async () => {
   const { data } = await api.get("/company/getAll", getAllCompanies /*{
     headers: {
       Authorization: localStorage.getItem("token"),
