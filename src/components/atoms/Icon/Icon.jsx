@@ -8,7 +8,8 @@ import Logo from './Logo.svg?react'
 import Smartphone from './smartphone.svg?react'
 import Search from './search.svg?react'
 import Map from './map.svg?react'
-import Mail from './mail.svg?react'
+import Mail from './mail.svg?react';
+import Arrow from './arrow.svg?react';
 
 
 
@@ -29,6 +30,7 @@ export default function Icon({type}) {
         {type === "Search" && <Search/> }
         {type === "Map" && <Map/> }
         {type === "Mail" && <Mail/> }
+        {type === "Arrow" && <Arrow/>}
         
         </>
             

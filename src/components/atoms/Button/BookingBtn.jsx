@@ -1,7 +1,8 @@
 import React from 'react'
-import classnames from "classnames"
+import classnames from "classnames";
+import Icon from "../Icon/Icon";
 
-const BookingBtn = ({text, variant, url}) => {
+const BookingBtn = ({text, variant, url, icon}) => {
 
   const buttonClasses = classnames('button', {
 
@@ -15,7 +16,8 @@ const BookingBtn = ({text, variant, url}) => {
   return (
     <button className={buttonClasses}>
       {/* <a href={url}> */}
-      <p>{text}</p>
+      {text && <p>{text}</p>}
+      {icon && <Icon type={icon}/>}
       {/* </a> */}
     </button>
   )
