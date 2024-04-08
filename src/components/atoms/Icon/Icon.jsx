@@ -33,7 +33,6 @@ export default function Icon({type}) {
         {type === "Arrow" && <Arrow/>}
         
         </>
-           
             
         
     );
