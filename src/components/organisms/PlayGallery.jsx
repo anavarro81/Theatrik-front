@@ -9,7 +9,7 @@ const PlayGallery = ({plays}) => {
     <> 
     <Title type="H2" text={"Cartelera"}>  </Title>
     <div className='grid grid-cols-1 lg:grid-cols-2 gap-6 xl:grid-cols-3' >
-      {plays.map((play) => <PlayCard play={play}/>)}
+      {plays.map((play) => <PlayCard key={play._id} play={play}/>)}
     </div>
     </>
 
