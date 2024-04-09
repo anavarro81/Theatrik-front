@@ -8,7 +8,7 @@ const PlayGallery = ({plays}) => {
   return (
     <> 
     <Title type="H2" text={"Cartelera"}>  </Title>
-    <div className='grid grid-cols-1 lg:grid-cols-2 gap-6 xl:grid-cols-3' >
+    <div className='grid grid-cols-1 lg:grid-cols-2 gap-6 xl:grid-cols-4' >
       {plays.map((play) => <PlayCard play={play}/>)}
     </div>
     </>
