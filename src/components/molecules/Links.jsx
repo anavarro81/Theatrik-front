@@ -1,7 +1,6 @@
 import React from "react";
 import Text from "../atoms/Text/Text";
 import classnames from "classnames";
-import classNames from "classnames";
 
 const Links = (text) => {
 

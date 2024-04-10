@@ -21,10 +21,12 @@ export default function FilterBar() {
       </div>
 
       {/* version escritorio */}
-      <div className="hidden md:flex justify-around">
-        <AsociationFilter />
-        <CalendarFilter />
-        <GenderFilter />
+      <div className="hidden md:block bg-gray-300 justify-around flex-col items-center">
+        <div className="flex justify-around mt-4 ">
+          <AsociationFilter />
+          <CalendarFilter />
+          <GenderFilter />
+        </div>
       </div>
     </div>
   );
