@@ -7,7 +7,14 @@ const Info = () => {
   
   
   return (
-    <div>Info</div>
+    <>
+    <img src={play.cartel} alt="" />
+    <p>{play.company_name} </p>
+    <p>{play.place} </p>
+
+    </>
+
+
   )
 }
 

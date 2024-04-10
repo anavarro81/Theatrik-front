@@ -1,30 +1,38 @@
-import React, { useEffect, useState } from 'react'
+import {useState, useEffect} from "react"
 
-function usePlays () {
+function usePlays(params) {
 
-    const [plays, setplays] = useState([])
+  const [plays, setPlays] = useState([])
+  const [filteredplays, setfilterplays] = useState([])
+
+  const getPlays = () => {
+    fetch('http://localhost:5002/play/getAllPlays')
+    .then((res) => res.json())
+    .then((data) => setPlays(data))
     
-    const getPlays = () => {
-        console.log('getPlays');
-        fetch('http://localhost:5002/play/getAllPlays')
-          .then((res) => {
-            return res.json()
-          })
-          .then((data) => {
-            console.log('recupero: ', data);
-            setplays(data)
-          })
-      }
-      
-      
-      useEffect(() => {
-        getPlays()
-      
-      }, [])
-      
-    
-    return {plays, getPlays}
+  }
 
+  const searh = (searchTerm) => {
+    console.log('Estoy en buscar: ', searchTerm);
+    console.log(plays)
+
+    const result = plays.filter((play) => {
+      return play.company_name === searchTerm 
+    })
+
+    console.log(' result > ', result);
+    setfilterplays(result)
+    
+  }
+
+
+  useEffect(() => {
+    getPlays() 
+  }, [])
+
+  return [plays, searh, filteredplays]
+  
+  
 }
 
-export {usePlays}
+export default usePlays;
