@@ -10,15 +10,6 @@
     @apply rounded-lg text-sm px-10 py-2.5 cursor-pointer
 }
 
-.filterBar {
-    @apply flex
-    shadow-md
-    overflow-hidden
-    md:flex-shrink-0
-    font-semibold
-    m-0 /*aplica margin 0 */
-    justify-between
-}
 
 .hidden.md\:inline-block {
   display: inline-block !important;
@@ -29,3 +20,4 @@
 }
 
 @tailwind utilities;
+

@@ -7,13 +7,10 @@ const ButtonIconFilter = ({ icon, text }) => {
   
   return (
 
-    <div className="flex flex-col items-center md:hidden">
-      <p className="text-center">{text}</p>
-      <div className="border-2 border-orange-600 rounded-md p-1 mt-1">
-        <BookingBtn icon={icon} />
+      <div className="border-2 border-orange-600 rounded mt-1 items-center ">
+        <p className="text-sm">{text}</p>
+          <BookingBtn icon={icon} className="" />
       </div>
-    </div>
-
   );
 };
 
