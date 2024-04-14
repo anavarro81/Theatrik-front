@@ -6,12 +6,13 @@ const ButtonIconFilter = ({ icon, text }) => {
     console.log("recibiendo: ", icon, " y tambien: ", text);
   
   return (
-
-      <div className="border-2 border-orange-600 rounded mt-1 items-center ">
-        <p className="text-sm">{text}</p>
-          <BookingBtn icon={icon} className="" />
-      </div>
+    <div className="bg-slate-50 w-[8rem] h-11 rounded mt-1 mb-1 flex items-center shadow ">
+      <p className="text-sm ml-2 mr-[-2em] ">{text}</p>
+      <BookingBtn icon={icon} />
+    </div>
   );
 };
 
 export default ButtonIconFilter;
+
+// flex justify-end
