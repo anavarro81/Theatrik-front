@@ -7,33 +7,37 @@ import AsociationFilter from "../molecules/AsociationFilter";
 import ButtonIconFilter from "../molecules/ButtonIconFilter";
 
 export default function FilterBar() {
-  return (
-    // bg-green-700 flex pt-2 pb-2
-    <div className="">
-      <div className="bg-gray-200 hidden">
-        <Links />
-      </div>
 
-      {/* version movil */}
-      <div className="bg-gray-300 w-full flex justify-around">
-        <div className="">
-          <ButtonIconFilter icon={"Calendar"} text={"Calendario"} />
+  return (
+    
+      // bg-green-700 flex pt-2 pb-2
+      <div className="">
+        <div className="bg-gray-200 hidden">
+          <Links />
         </div>
-        <div className="">
-          <ButtonIconFilter icon={"Calendar"} text={"Calendario"} />
+
+        {/* version movil */}
+        <div className="bg-gray-300 w-full flex justify-around">
+          <div>
+            <ButtonIconFilter icon={"Company"} text={"Asociación"} />
+          </div>
+          <div>
+            <ButtonIconFilter icon={"Calendar"} text={"Calendario"} />
+          </div>
+          <div>
+            <ButtonIconFilter icon={"Genre"} text={"Genero"} />
+          </div>
         </div>
-        <div className="">
-          <ButtonIconFilter icon={"Genre"} text={"Genero"} />
-        </div>
-      </div>
-      {/* version escritorio */}
-      {/* <div className="hidden md:block bg-gray-300 justify-around flex-col items-center">
+
+        {/* version escritorio */}
+        {/* <div className="hidden md:block bg-gray-300 justify-around flex-col items-center">
         <div className="flex justify-around mt-4 ">
           <AsociationFilter />
           <CalendarFilter />
           <GenderFilter />
-        </div>
-      </div> */}
-    </div>
+          </div>
+        </div> */}
+      </div>
+
   );
 }
