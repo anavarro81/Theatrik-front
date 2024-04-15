@@ -3,7 +3,7 @@ import BookingBtn from "../atoms/Button/BookingBtn.jsx";
 import classNames from "classnames";
 
 const ButtonIconFilter = ({ icon, text, ...props}) => {
-    console.log("recibiendo: ", icon, " y tambien: ", text);
+    // console.log("recibiendo: ", icon, " y tambien: ", text);
 
 
   

@@ -49,7 +49,7 @@ import Text from "../atoms/Text/Text";
 import classnames from "classnames";
 
 const Links = () => {
-  const textLink = classnames("flex items-center h-7 mr-1.5 text-sm md:ml-10");
+  const textLink = classnames("flex items-center h-7 mt-1.5 mr-1.5 text-sm md:ml-10");
 
   return (
     <div className="flex">
