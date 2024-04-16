@@ -17,5 +17,3 @@ const ButtonIconFilter = ({ icon, text, ...props}) => {
 };
 
 export default ButtonIconFilter;
-
-// flex justify-end
