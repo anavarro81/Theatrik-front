@@ -134,6 +134,8 @@ const BookingForm = () => {
 
 
 
+
+
 <button type="submit"> Reservar </button>
 
 </div>

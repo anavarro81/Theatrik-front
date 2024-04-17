@@ -1,13 +1,19 @@
 import React from 'react'
 import { useLoaderData } from 'react-router-dom'
+import InfoCompanyCard from '../../components/molecules/InfoCompanyCard';
 
 const Info = () => {
   const play =  useLoaderData();
-  console.log(play);
+  
+  console.log(play.company);
   
   
   return (
-    <div>Info</div>
+    <>
+    <InfoCompanyCard company={play.company[0]}/>
+    </>
+
+
   )
 }
 
