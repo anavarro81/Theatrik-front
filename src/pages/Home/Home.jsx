@@ -1,4 +1,4 @@
-import Slider from '../../components/organisms/Slider';
+import HomeSlider from '../../components/organisms/Slider';
 import FilterBar from '../../components/organisms/FilterBar';
 import  PlayGallery from '../../components/organisms/PlayGallery';
 import { useLoaderData } from 'react-router-dom';
@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <>
       
-      <Slider data={sliderPlays}/>
+      <HomeSlider data={sliderPlays}/>
       <FilterBar/>
       <PlayGallery plays={plays}/>
 
