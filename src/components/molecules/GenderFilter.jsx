@@ -1,45 +1,19 @@
 import React, {useState, useEffect} from "react";
-import populate from "../../../../Back/src/api/controllers/company.controllers"
-
-const GenderFilter = () => {
-  const [data, setData] = useState([]);
 
 
-// import React, { useState, useEffect } from 'react';
-// import axios from 'axios';
 
-// function CompanyComponent() {
-//   const [companies, setCompanies] = useState([]);
+const GenderFilter = ({ children }) => {
+  console.log("los children: ", children);
 
-//   useEffect(() => {
-//     const fetchData = async () => {
-//       try {
-//         const response = await axios.get('/api/companies'); // Aquí debes poner la ruta correcta de tu endpoint
-//         setCompanies(response.data);
-//       } catch (error) {
-//         console.error('Error al obtener datos de la empresa:', error);
-//       }
-//     };
-
-//     fetchData();
-//   }, []); // El array vacío como segundo argumento asegura que este efecto solo se ejecute una vez, equivalente a componentDidMount en clases
-
-//   return (
-//     <div>
-//       <h1>Empresas</h1>
-//       <ul>
-//         {companies.map(company => (
-//           <li key={company._id}>{company.name}</li>
-//         ))}
-//       </ul>
-//     </div>
-//   );
-// }
-
-// export default CompanyComponent;
+  const play = useContext(playsContext);
+  console.log("este es el valor de playContext: ", play);
 
   return (
     <div>
+      <playsContext.Provider>
+
+      {children}
+      
       <p className="font-medium leading-6 text-slate-500 h-[0rem] flex items-center justify-center">
         Genero
       </p>
@@ -48,12 +22,13 @@ const GenderFilter = () => {
           name="selectedGender"
           defaultValue="orange"
           className="w-full h-full rounded "
-        >
+          >
           <option value="comedia">Comedia</option>
           <option value="drama">Drama</option>
           <option value="infantil">Infantil</option>
         </select>
       </div>
+          </playsContext.Provider>
     </div>
   );
 };

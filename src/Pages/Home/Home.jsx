@@ -8,17 +8,20 @@ const Home = () => {
 
   const plays =  useLoaderData();
 
+  //useState
+  const handleFilterPlays = (filterPlays) =>{
+
+  }
 
   return (
     <>
-      
-      <Slider/>
-      
-      <FilterBar/>
+    
+      <Slider />
+      <FilterBar plays={plays} />
       <PlayGallery plays={plays} />
-
+      
     </>
-  )
+  );
 }
 
 export default Home
