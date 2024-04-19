@@ -1,4 +1,3 @@
-import React from "react";
 import Text from "../../atoms/Text/Text";
 import Title from "../../atoms/Title/Title";
 import { formatDate } from '../../../../utils/formatDate';

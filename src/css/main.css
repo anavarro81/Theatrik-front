@@ -28,4 +28,15 @@
   display: none !important;
 }
 
+.custom-pagination-bullet {
+  margin-inline: 18px;
+  color: lightslategray;
+  cursor: pointer;
+}
+
+.swiper-pagination-bullet-active {
+  color: white;
+  background-color: transparent;
+}
+
 @tailwind utilities;
