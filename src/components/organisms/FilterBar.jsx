@@ -17,18 +17,11 @@ export default function FilterBar({/*plays*/}) {
   const [activeFilter, setActiveFilter] = useState(null);
   // console.log("Estoy en FilterBar ActiveF: ", activeFilter);
 
-  const handleButtonClick = (filterType) => {
+  /*1 explicación */
+  const handleButtonClick = (filterType) => { 
     setActiveFilter(activeFilter === filterType ? null : filterType);
     // console.log("filtro es: ", filterType);
   };
-
-  //  activeFilter === filterType ? null : filterType: Esta es una expresión
-  //  condicional que evalúa si el filtro activo actual (activeFilter)
-  //  es el mismo que el filtro que se ha seleccionado (filterType). Si son iguales,
-  //   significa que se ha hecho clic en el mismo botón de filtro nuevamente,
-  //   por lo que establece activeFilter en null, lo que significa que se ocultará el componente correspondiente.
-  //   Si no son iguales, establece activeFilter en el nuevo filterType seleccionado,
-  //    lo que significa que se mostrará el componente correspondiente.
 
   return (
     <>
@@ -61,7 +54,8 @@ export default function FilterBar({/*plays*/}) {
       </div>
 
       {/* div adicional para mostrar los filtros en movil con el condicional para que aparezca solo si se pulsa el botón*/}
-
+      
+      {/*2 explicación*/}
       <div
         className={`bg-gray-300 mt-1 pt-2 pb-2 flex ${
           activeFilter ? "block" : "hidden"
@@ -84,18 +78,17 @@ export default function FilterBar({/*plays*/}) {
 }
 
 
+/*1----------------------------------------------------------------
+activeFilter === filterType ? null : filterType: Esta es una expresión
+condicional que evalúa si el filtro activo actual (activeFilter) 
+es el mismo que el filtro que se ha seleccionado (filterType). Si son iguales,
+significa que se ha hecho clic en el mismo botón de filtro nuevamente, 
+por lo que establece activeFilter en null, lo que significa que se ocultará el componente correspondiente. 
+Si no son iguales, establece activeFilter en el nuevo filterType seleccionado,
+lo que significa que se mostrará el componente correspondiente.*/
 
-//  activeFilter === filterType ? null : filterType: Esta es una expresión
-//  condicional que evalúa si el filtro activo actual (activeFilter) 
-//  es el mismo que el filtro que se ha seleccionado (filterType). Si son iguales,
-//   significa que se ha hecho clic en el mismo botón de filtro nuevamente, 
-//   por lo que establece activeFilter en null, lo que significa que se ocultará el componente correspondiente. 
-//   Si no son iguales, establece activeFilter en el nuevo filterType seleccionado,
-//    lo que significa que se mostrará el componente correspondiente.
 
-//----------------------------------------------------------------
-
-// En resumen, ${activeFilter ? "block" : "hidden"} se traduce a:
-
-// Si activeFilter tiene un valor diferente de null, la clase CSS "block" se aplica al elemento, lo que lo hace visible.
-// Si activeFilter es null, la clase CSS "hidden" se aplica al elemento, lo que lo hace invisible.
+/*2----------------------------------------------------------------
+En resumen, ${activeFilter ? "block" : "hidden"} se traduce a:
+Si activeFilter tiene un valor diferente de null, la clase CSS "block" se aplica al elemento, lo que lo hace visible.
+Si activeFilter es null, la clase CSS "hidden" se aplica al elemento, lo que lo hace invisible.*/
