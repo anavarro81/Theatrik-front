@@ -12,9 +12,9 @@ const BookingPage = () => {
   
 
   return (
+    <> 
     
-    
-
+ <h1> Reservar </h1>
 
   <div className='flex flex-col-reverse md:flex-row md:justify-around  m-2 '>
 
@@ -29,7 +29,7 @@ const BookingPage = () => {
 
   </div>
 
-
+  </>
   )
 }
 
