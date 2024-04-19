@@ -1,20 +1,16 @@
-import React from "react";
 import BookingBtn from "../../atoms/Button/BookingBtn";
 
-const SliderPagination = () => {
+const SliderPagination = ({data}) => {
 
     return (
         <>
 
         <div className="hidden lg:contents">
-            <BookingBtn text={"1"} variant={"paginationBtn"} url={"/"}/>
-            <BookingBtn text={"2"} variant={"paginationBtn"} url={"/"}/>
-            <BookingBtn text={"3"} variant={"paginationBtn"} url={"/"}/>
-            <BookingBtn text={"4"} variant={"paginationBtn"} url={"/"}/>
-            <BookingBtn text={"5"} variant={"paginationBtn"} url={"/"}/>
+        {data?.map((item, i) => 
+            <BookingBtn key={item._id} text={i + 1} variant={"paginationBtn"}/>)}
         </div>
         <div>
-            <BookingBtn icon={"Arrow"} variant={"paginationBtn"} url={"/"}/>
+            <BookingBtn icon={"Arrow"} variant={"paginationBtn"}/>
         </div>
         </>
     )
