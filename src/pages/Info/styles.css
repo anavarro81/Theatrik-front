@@ -6,9 +6,7 @@
     .parent{
       flex-direction: column;
 }
-    .left{
-      
-    }
+
 }
 
 @media screen and (min-width: 481px) {
