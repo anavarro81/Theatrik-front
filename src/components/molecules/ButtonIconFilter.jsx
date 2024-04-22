@@ -1,6 +1,4 @@
-import { React } from "react";
 import BookingBtn from "../atoms/Button/BookingBtn.jsx";
-import classNames from "classnames";
 
 const ButtonIconFilter = ({ icon, text }) => {
     console.log("recibiendo: ", icon, " y tambien: ", text);
