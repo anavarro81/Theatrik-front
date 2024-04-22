@@ -10,7 +10,6 @@
     @apply rounded-lg text-sm px-10 py-2.5 cursor-pointer
 }
 
-
 .hidden.md\:inline-block {
   display: inline-block !important;
 }
@@ -19,10 +18,6 @@
   display: none !important;
 }
 
-<<<<<<< HEAD
-@tailwind utilities;
-
-=======
 .custom-pagination-bullet {
   margin-inline: 18px;
   color: lightslategray;
