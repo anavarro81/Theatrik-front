@@ -1,13 +1,27 @@
 import HomeSlider from '../../components/organisms/Slider';
 import FilterBar from '../../components/organisms/FilterBar';
 import  PlayGallery from '../../components/organisms/PlayGallery';
+import { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 
 const Home = () => {
 
   const plays =  useLoaderData();
+  
+  const [sliderPlays, setSliderPlays] = useState([]);
+  const currentDate = (new Date()); 
 
-  const sliderPlays = plays.slice(0,5)
+  const updateSlider = () => {
+    
+    const filteredPlays = plays?.filter(play => new Date(play.date) >= currentDate).slice(0,5);
+
+    setSliderPlays(filteredPlays);
+
+  };
+
+  useEffect(() => {
+    updateSlider(); 
+  }, []);
 
   return (
     <>
