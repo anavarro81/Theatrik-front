@@ -18,7 +18,7 @@ const router = createBrowserRouter([
         index: true,
         element: <Home />,
         loader: async () => {
-          return fetch("http://localhost:5000/play/getAllPlays");
+          return fetch("http://localhost:5002/play/getAllPlays");
         },
       },
 
@@ -26,7 +26,7 @@ const router = createBrowserRouter([
         path: "/booking/:id",
         element: <BookingPage />,
         loader: async ({ params }) => {
-          return fetch(`http://localhost:5000/play/getPlay/${params.id}`);
+          return fetch(`http://localhost:5002/play/getPlay/${params.id}`);
         },
       },
 
@@ -34,7 +34,7 @@ const router = createBrowserRouter([
         path: "/info/:id",
         element: <Info />,
         loader: ({ params }) => {
-          return fetch(`http://localhost:5000/play/getPlay/${params.id}`);
+          return fetch(`http://localhost:5002/play/getPlay/${params.id}`);
         },
       },
     ],
