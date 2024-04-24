@@ -25,7 +25,7 @@ const HomeSlider = ({data}) => {
         <>  
             <Swiper
                 autoplay={{
-                    delay: 3000,
+                    delay: 5000,
                 }} 
                 speed={2000}
                 loop={true} 
