@@ -7,7 +7,8 @@ const people = [
   {
     id: 1,
     name: "Wade Cooper",
-    avatar: "https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+    avatar:
+      "https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
   },
   {
     id: 2,
@@ -72,15 +73,18 @@ function classNames(...classes) {
 export default function AsociationFilter() {
   const [selected, setSelected] = useState(people[3]);
   return (
-    <div className="bg-gray-300">
+    <div>
       <Listbox value={selected} onChange={setSelected}>
         {({ open }) => (
           <div>
-            <Listbox.Label className=" mb-2 font-medium leading-6 text-slate-500 h-[rem] flex items-center justify-center">
+            {/* <Listbox.Label className=" mb-2 font-medium leading-6 text-slate-500 h-[rem] flex items-center justify-center">
               Asociación
-            </Listbox.Label>
+            </Listbox.Label> */}
+            <p className="font-medium leading-6 text-slate-500 h-[0rem] flex items-center justify-center">
+              Asociación
+            </p>
 
-            <div className="relative mt-2 ">
+            <div className="relative my-3">
               <Listbox.Button className="relative border border-gray-300 rounded w-full h-[40px] p-0 cursor-default bg-white py-1.5 pl-3 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 sm:text-sm sm:leading-6">
                 <span className="flex items-center">
                   <img

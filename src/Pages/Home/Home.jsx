@@ -3,7 +3,6 @@ import FilterBar from '../../components/organisms/FilterBar';
 import  PlayGallery from '../../components/organisms/PlayGallery';
 import { useLoaderData } from 'react-router-dom';
 
-
 const Home = () => {
 
   const plays =  useLoaderData();

@@ -1,10 +1,11 @@
-import React from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import BookingPage from "./pages/BookingPage/BookingPage";
-import Info from "./pages/Info/Info";
-import ErrorPage from "./pages/ErrorPage/ErrorPage";
-import Layout from "./Layout/Layout";
-import Home from "./pages/Home/Home";
+import React from 'react'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import BookingPage from './Pages/BookingPage/BookingPage'
+import Info from './Pages/Info/Info'
+import ErrorPage from './Pages/ErrorPage/ErrorPage'
+import Layout from './Layout/Layout'
+import Home from './Pages/Home/Home'
+
 
 const router = createBrowserRouter([
   {
