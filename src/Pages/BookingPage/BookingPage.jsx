@@ -14,8 +14,6 @@ const BookingPage = () => {
   return (
     <> 
     
- <h1> Reservar </h1>
-
   <div className='flex flex-col-reverse md:flex-row md:justify-around  m-2 '>
 
     <div className='flex w-full space-y-4 md:flex flex-col md:w-[60%]'> 

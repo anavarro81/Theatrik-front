@@ -79,7 +79,7 @@ const Info = () => {
           src={play.cartel}
           className="rounded-2xl h-full mt-2 min-w-52"
         ></img>
-        <div className="box2 border-sm border border-black rounded-lg w-52 h-auto mx-auto mb-10 text-[9px] p-1 mt-6 ">
+        <div className="box2 border-sm border border-black rounded-lg w-52 h-auto mx-auto mb-8 text-[9px] p-1 mt-10 ">
           <div>
             <p className="font-bold inline text-xs ml-1">Title:</p>
             <h2 className={h2}>
