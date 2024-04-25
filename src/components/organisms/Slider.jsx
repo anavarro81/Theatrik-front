@@ -4,7 +4,6 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import SliderText from "../molecules/Slider/SliderText";
 import Image from "../atoms/Image/Image";
-// import SliderPagination from "../molecules/Slider/SliderPagination";
 import BookingBtn from "../atoms/Button/BookingBtn";
 import { Link } from "react-router-dom";
 
@@ -43,16 +42,9 @@ const HomeSlider = ({data}) => {
                         <div>   
                             <SliderText data={item}/>
                         </div>
-                        <div className="grid grid-cols-2 lg:grid-cols-1">
-                         <div>
-                            <Link to={`/booking/${item._id}`}>
-                                <BookingBtn text={"Reservar"} variant={"gray"}/>
-                                </Link>
-                            </div>
-                             {/* <div className="flex justify-end lg:mt-12">
-                                <SliderPagination data={data}/>        
-                            </div> */}
-                        </div>
+                        <Link to={`/booking/${item._id}`}>
+                            <BookingBtn text={"Reservar"} variant={"gray"}/>
+                        </Link> 
                     </div>
                 </SwiperSlide>)}
             </div>
