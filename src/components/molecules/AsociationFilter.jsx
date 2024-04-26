@@ -11,21 +11,38 @@ export default function AsociationFilter({ children }) {
   const [selected, setSelected] = useState(null);
   const [plays, getPlays, searchPlay, filteredPlays] = usePlays();
   const searchParams = { searchTerm: "", searchFor: "" };
-  
+  const [selectedCompany, setSelectedCompany] = useState("");
+
+  const handleCompany = (busqueda) => {
+    // console.log(" busqueda > ", busqueda);
+    // console.log("He cambiado de opción");
+
+    searchParams.searchTerm = "company_name";
+    searchParams.searchFor = busqueda
+    // searchParams.searchFor = "cualquiera";
+
+    // console.log("searchParams >> ", searchParams);
+
+    searchPlay(searchParams);
+  };
+
+  // console.log("selectedCompany >> ", selectedCompany);
+
   //  llamar a la función getPlays cuando el componente se monta por primera vez
   useEffect(() => {
     getPlays();
   }, []);
-  
-  console.log("plays en asociacion: ", plays);
-  const handleChange = (event) => {
-    setSearchParams({
-      searchTerm: event.target.name,
-      searchFor: event.target.value,
-    });
-    searchPlay(searchParams);
-  };
-  
+
+  // console.log("plays en asociacion: ", plays);
+
+    // const handleChange = (event) => {
+    //   setSearchParams({
+    //     searchTerm: event.target.name,
+    //     searchFor: event.target.value,
+    //   });
+    //   searchPlay(searchParams);
+    // };
+
   // Mapear los datos fuera del componente
   const playsList = plays.map((play) => (
     <>
@@ -78,7 +95,7 @@ export default function AsociationFilter({ children }) {
 
   return (
     <div>
-      <Listbox onChange={handleChange}>
+      <Listbox value={selectedCompany} onChange={handleCompany}>
         {({ open }) => (
           <div>
             <p className="font-medium leading-6 text-slate-500 h-[0rem] flex items-center justify-center">

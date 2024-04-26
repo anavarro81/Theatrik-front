@@ -29,7 +29,7 @@ const PlaysProvider = ({ children }) => {
     });
 
     setFilteredPlays(result);
-    console.log("result filtered", result);
+    // console.log("result filtered", result);
   };
 
 
