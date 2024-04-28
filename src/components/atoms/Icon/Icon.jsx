@@ -10,7 +10,7 @@ import Search from './search.svg?react'
 import Map from './map.svg?react'
 import Mail from './mail.svg?react';
 import Arrow from './arrow.svg?react';
-
+import House from './house.svg?react'
 
 
 
@@ -31,6 +31,7 @@ export default function Icon({type}) {
         {type === "Map" && <Map/> }
         {type === "Mail" && <Mail/> }
         {type === "Arrow" && <Arrow/>}
+        {type === "House" && <House/>}
         
         </>
             
