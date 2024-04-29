@@ -20,12 +20,9 @@ export default function AsociationFilter({ children }) {
     searchParams.searchTerm = "company_name";
     searchParams.searchFor = busqueda
     // searchParams.searchFor = "cualquiera";
-
     // console.log("searchParams >> ", searchParams);
-
     searchPlay(searchParams);
   };
-
   // console.log("selectedCompany >> ", selectedCompany);
 
   //  llamar a la función getPlays cuando el componente se monta por primera vez
@@ -34,14 +31,6 @@ export default function AsociationFilter({ children }) {
   }, []);
 
   // console.log("plays en asociacion: ", plays);
-
-    // const handleChange = (event) => {
-    //   setSearchParams({
-    //     searchTerm: event.target.name,
-    //     searchFor: event.target.value,
-    //   });
-    //   searchPlay(searchParams);
-    // };
 
   // Mapear los datos fuera del componente
   const playsList = plays.map((play) => (

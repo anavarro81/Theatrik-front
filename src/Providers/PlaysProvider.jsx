@@ -32,10 +32,20 @@ const PlaysProvider = ({ children }) => {
     // console.log("result filtered", result);
   };
 
+  //filtramos por fecha
+  const searchDate = (dates) => {
+    const [ startDate, endDate ] = dates;
+    console.log(`inicio Provider ${startDate} y fin Provider ${endDate}`);
+  
+    // console.log(`inicio y fin de las fechas en Provider ${dates}`);
+    // const result = plays.filter((play) => {
+    //   return play[searchTerm].includes(searchFor);
+  }
+
 
   // Se devuelve el contexto proporcionando los estados y las funciones a través del contexto
   return (
-    <PlaysContext.Provider value={[plays, getPlays, searchPlay, filteredPlays]}>
+    <PlaysContext.Provider value={[plays, getPlays, searchPlay, filteredPlays, searchDate]}>
       {children}
     </PlaysContext.Provider>
   );
