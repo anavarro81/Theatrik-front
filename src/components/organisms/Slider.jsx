@@ -35,10 +35,10 @@ const HomeSlider = ({data}) => {
             <div className="swiper-wrapper">
             {data?.map((item) => 
                 <SwiperSlide className="grid grid-cols-1 mb-6 md:grid-cols-2" key={item._id} >
-                    <div className="md:max-w-md md:col-start-2 md:mx-auto md:my-8" >
+                    <div className="md:max-w-md md:col-start-2 md:mx-auto md:my-6" >
                     <Image url={item.cartel} alt={item.title} variant={"rounded"}/>
                     </div>
-                    <div className="px-2 py-4 grid grid-cols-1 gap-4 md:row-start-1 md:m-auto">
+                    <div className="px-4 py-4 grid grid-cols-1 gap-4 md:gap-8 md:row-start-1 md:ml-32 md:my-auto">
                         <div>   
                             <SliderText data={item}/>
                         </div>
