@@ -7,6 +7,7 @@ const PlaysProvider = ({ children }) => {
   // Se inicializan dos estados para almacenar las obras de teatro y las obras filtradas
   const [plays, setPlays] = useState([]);
   const [filteredPlays, setFilteredPlays] = useState([]);
+  const [ date, setDate ] = useState([]);
 
   // Función para obtener todas las obras de teatro desde el servidor
   const getPlays = () => {
@@ -37,11 +38,12 @@ const PlaysProvider = ({ children }) => {
     const [ startDate, endDate ] = dates;
     console.log(`inicio Provider ${startDate} y fin Provider ${endDate}`);
   
-    // console.log(`inicio y fin de las fechas en Provider ${dates}`);
-    // const result = plays.filter((play) => {
-    //   return play[searchTerm].includes(searchFor);
-  }
+  //   const result = plays.filter((play) => {
+  //     return play[startDate].includes(endDate);
+  // });
 
+  setDate(result)  
+};
 
   // Se devuelve el contexto proporcionando los estados y las funciones a través del contexto
   return (

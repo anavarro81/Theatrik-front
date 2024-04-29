@@ -6,16 +6,14 @@ import { useEffect } from "react";
 import { get } from "react-hook-form";
 import { usePlays } from "../../Providers/PlaysProvider";
 
-
 const CalendarFilter = () => {
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(null);
-  // const searchParams = { searchStart: "", searchEnd: "" };
   const [plays, getPlays, searchPlay, filteredPlays, searchDate] = usePlays();
 
-  useEffect(() => {
-    getPlays();
-  }, []);
+  // useEffect(() => {
+  //   getPlays();
+  // }, []);
 
   // console.log("calendarFilter >> ", plays);
 

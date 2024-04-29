@@ -10,7 +10,7 @@ import {useLocation, Link} from "react-router-dom";
 const Header = ({placeholder}) => {
 
   let location = useLocation();
-  // console.log(location);
+  console.log(location);
   
   const [plays, getPlays, filteredPlays, searchPlay, multipleSearch] = usePlays();
 
