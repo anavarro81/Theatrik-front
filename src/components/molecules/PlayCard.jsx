@@ -4,6 +4,7 @@ import Title from '../atoms/Title/Title'
 import Text from '../atoms/Text/Text'
 import BookingBtn from '../atoms/Button/BookingBtn'
 import { formatDate } from '../../../utils/formatDate'
+import { Link } from 'react-router-dom'
 
 const PlayCard = ({play}) => {
 
@@ -26,7 +27,9 @@ const PlayCard = ({play}) => {
         <Text text={formatedDate} variant={"white"} />
 
         {/* <div className='flex justify-center'> */}
-          <BookingBtn text={"Reservar"} variant={"button-playCard"} url={""} />
+        <Link to={`/booking/${play._id}`} > <BookingBtn text={"Reservar"} variant={"button-playCard"}  /> </Link>
+
+          {/* <BookingBtn text={"Reservar"} variant={"button-playCard"} url={""} /> */}
           
         {/* </div> */}
 

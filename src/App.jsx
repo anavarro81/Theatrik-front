@@ -6,7 +6,8 @@ import Info from './Pages/Info/Info'
 import ErrorPage from './Pages/ErrorPage/ErrorPage'
 import Layout from './Layout/Layout'
 import Home from './Pages/Home/Home'
-
+import SearchResultsPage from './Pages/SearchResultsPage/SearchResultsPage'
+import { PlaysProvider } from './Providers/PlaysProvider'
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,12 @@ const router = createBrowserRouter([
           return fetch(`http://localhost:5002/play/getPlay/${params.id}`);
         },
       },
+
+      {
+        path: "/SearchResultsPage",
+        element: <SearchResultsPage/>
+      },
+
     ],
   },
 ]);
@@ -44,9 +51,9 @@ const router = createBrowserRouter([
 const App = () => {
   return (
     <>
-    <PlaysProvider>
-      <RouterProvider router={router} />
-    </PlaysProvider>
+      <PlaysProvider>
+        <RouterProvider router={router} />
+      </PlaysProvider>
     </>
   );
 };
