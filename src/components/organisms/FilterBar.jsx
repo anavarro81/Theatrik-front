@@ -5,22 +5,14 @@ import GenderFilter from "../molecules/GenderFilter";
 import AsociationFilter from "../molecules/AsociationFilter";
 import ButtonIconFilter from "../molecules/ButtonIconFilter";
 
-export default function FilterBar({/*plays*/}) {
-  
-  // const handleGenre = (genre) => {
-  //   console.log("He recibido el genero del hijo: ", genre);
+export default function FilterBar() {
 
-  //   const filterGenre = plays.filter(play => play.genre === genre)
-  //   console.log(filterGenre);
-  // };
 
   const [activeFilter, setActiveFilter] = useState(null);
-  // console.log("Estoy en FilterBar ActiveF: ", activeFilter);
 
   /*1 explicación */
   const handleButtonClick = (filterType) => { 
     setActiveFilter(activeFilter === filterType ? null : filterType);
-    // console.log("filtro es: ", filterType);
   };
 
   return (
@@ -70,7 +62,7 @@ export default function FilterBar({/*plays*/}) {
         </div>
 
         <div className="md:mr-14">
-          {activeFilter === "Gender" && <GenderFilter genero={handleGenre} />}
+          {activeFilter === "Gender" && <GenderFilter />}
         </div>
       </div>
     </>
