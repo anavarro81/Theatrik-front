@@ -4,7 +4,6 @@ import  PlayGallery from '../../components/organisms/PlayGallery';
 import { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { usePlays } from '../../Providers/PlaysProvider';
-import { useEffect } from 'react';
 
 const Home = () => {
   
