@@ -7,14 +7,12 @@ const PlaysProvider = ({ children }) => {
   // Se inicializan dos estados para almacenar las obras de teatro y las obras filtradas
   const [plays, setPlays] = useState([]);
   const [filteredPlays, setFilteredPlays] = useState([]);
-  const [ date, setDate ] = useState([]);
 
   // Función para obtener todas las obras de teatro desde el servidor
   const getPlays = () => {
     fetch("http://localhost:5002/play/getAllPlays")
       .then((res) => res.json())
       .then((data) => {setPlays(data)
-        // console.log("plays", data)
       })
   };
 
@@ -22,7 +20,6 @@ const PlaysProvider = ({ children }) => {
   const searchPlay = (searchParams) => {
     // Esta línea utiliza la destructuración de objetos para extraer las propiedades searchTerm y searchFor del objeto searchParams
     const { searchTerm, searchFor } = searchParams;
-    // console.log(searchTerm, searchFor);
 
     // Filtrar las obras de teatro según el criterio de búsqueda y establecerlas en el estado de obras filtradas
     const result = plays.filter((play) => {
@@ -30,19 +27,27 @@ const PlaysProvider = ({ children }) => {
     });
 
     setFilteredPlays(result);
-    // console.log("result filtered", result);
   };
 
   //filtramos por fecha
   const searchDate = (dates) => {
     const [ startDate, endDate ] = dates;
-    console.log(`inicio Provider ${startDate} y fin Provider ${endDate}`);
-  
-  //   const result = plays.filter((play) => {
-  //     return play[startDate].includes(endDate);
-  // });
 
-  setDate(result)  
+    //combertir las fechas a formato JS
+    const fechaInicio =  new Date(startDate);
+    const fechaFinal = new Date(endDate);
+
+    console.log(`Inicio ${fechaInicio} \n final ${endDate}`);
+  
+    const result = plays.filter((play) => {
+      const fechaObra = new Date(play.date);
+
+      if (fechaInicio <= fechaObra && fechaObra <= fechaFinal) {
+        return play;
+      }
+
+  });
+  setFilteredPlays(result);
 };
 
   // Se devuelve el contexto proporcionando los estados y las funciones a través del contexto
