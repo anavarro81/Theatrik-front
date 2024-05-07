@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import Footer from '../components/organisms/Footer';
 import { usePlays } from '../Providers/PlaysProvider';
 import { useEffect } from 'react';
+
 import { useLoaderData } from 'react-router-dom';
 
 const Layout = () => {
@@ -11,10 +12,6 @@ const Layout = () => {
 
     const plays =  useLoaderData();
 
-    // useEffect(() => {
-    //     getPlays();
-    
-    // }, [])
     
 
     return (
