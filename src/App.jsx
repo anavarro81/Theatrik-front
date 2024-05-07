@@ -39,6 +39,7 @@ const router = createBrowserRouter([
       },
 
       {
+
         path: "/search/:SearchQ",
         element: <SearchResultsPage/>
       },
@@ -52,7 +53,8 @@ const App = () => {
     <>
       <PlaysProvider>
       <RouterProvider router={router} />
-      </PlaysProvider>
+      </PlaysProvider>      
+
     </>
   );
 };
