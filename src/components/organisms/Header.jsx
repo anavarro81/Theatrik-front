@@ -3,21 +3,26 @@ import SearchBar from '../molecules/SearchBar'
 import Icon from '../atoms/Icon/Icon'
 import { usePlays } from '../../Providers/PlaysProvider'
 import { useState } from 'react'
-import {useLocation, Link} from "react-router-dom";
+import {useLocation, Link, useNavigate} from "react-router-dom";
 
 
 
 const Header = ({placeholder}) => {
 
-  let location = useLocation();
-  console.log(location);
+  const location = useLocation();
+  const navigate = useNavigate();
   
   const [plays, getPlays, filteredPlays, searchPlay, multipleSearch] = usePlays();
 
   const [searchString, setSearchString] = useState("")
     
   const handleSearch = () => {
-    console.log('Estoy en handleSearch');    
+    console.log('Estoy en handleSearch');
+    
+    if (location.pathname == '/') {  
+      navigate(`/search/${searchString}`)
+    }    
+    
     multipleSearch(searchString)
 
   }

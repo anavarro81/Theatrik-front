@@ -27,12 +27,31 @@ function PlaysProvider({ children }) {
     setFilteredPlays(result);
   };
 
+  const multipleSearch = (searchString) => {
+
+    console.log('searchString ', searchString);
+    console.log('plays = ', plays); 
+
+    const results = plays.filter(play => {
+      
+      if (play.title.includes(searchString) || play.company_name.includes(searchString)) {
+          return play
+      }
+    })
+
+    console.log(results);
+
+  }
+
+
   // Se devuelve el contexto proporcionando los estados y las funciones a través del contexto
   return (
-    <PlaysContext.Provider value={[plays, getPlays, filteredPlays, searchPlay]}>
+    <PlaysContext.Provider value={[plays, getPlays, filteredPlays, searchPlay, multipleSearch]}>
       {children}
     </PlaysContext.Provider>
   );
+
+
 }
 
 // Hook personalizado para acceder al contexto de las obras de teatro y las funciones relacionadas
