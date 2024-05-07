@@ -40,6 +40,7 @@ function PlaysProvider({ children }) {
     })
 
     console.log(results);
+    setFilteredPlays(results)
 
   }
 

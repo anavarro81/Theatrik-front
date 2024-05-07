@@ -50,7 +50,7 @@ return (
     <Title type={"H1"} text={"Resultados de la busqueda"}/>  / { filteredPlays.length } resultados
 
     {filteredPlays.map((play) => (
-        <div className='mb-2'>
+        <div className='mb-2' key={play._id}>
             
             <Link to={`/info/${play._id}`} > <Title type={"H2"} text={play.title}/> </Link>
             
