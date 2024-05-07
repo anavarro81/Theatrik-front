@@ -67,11 +67,16 @@ export function PlaysProvider({ children }) {
   }
 
 
+
+
+
   // Se devuelve el contexto proporcionando los estados y las funciones a través del contexto
   return (
 
-    // ! <PlaysContext.Provider value={[plays, getPlays, filteredPlays, searchPlay, multipleSearch]}>
+    
     <PlaysContext.Provider value={[plays, getPlays, filteredPlays, updateSlider, sliderPlays, searchPlay, multipleSearch, getData]}>
+    
+    
       {children}
     </PlaysContext.Provider>
   );
