@@ -5,7 +5,7 @@ import Info from './Pages/Info/Info'
 import ErrorPage from './Pages/ErrorPage/ErrorPage'
 import Layout from './Layout/Layout'
 import Home from './Pages/Home/Home'
-import 
+import SearchResultsPage from './Pages/SearchResultsPage/SearchResultsPage'
 
 const router = createBrowserRouter([
   {
@@ -39,7 +39,7 @@ const router = createBrowserRouter([
 
       {
         path: "/search/:searchQ",
-        element: <Info />,
+        element: <SearchResultsPage />,
       },
 
 
