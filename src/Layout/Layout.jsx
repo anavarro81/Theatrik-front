@@ -4,14 +4,14 @@ import Footer from '../components/organisms/Footer';
 import { usePlays } from '../Providers/PlaysProvider';
 import { useEffect } from 'react';
 
+import { useLoaderData } from 'react-router-dom';
+
 const Layout = () => {
 
-    const [plays, getPlays, filteredPlays, searchPlay, multipleSearch] = usePlays(); 
+    // const [plays, getPlays, filteredPlays, searchPlay, multipleSearch] = usePlays(); 
 
-    useEffect(() => {
-        getPlays();
-    
-    }, [])
+    const plays =  useLoaderData();
+
     
 
     return (
