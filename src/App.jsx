@@ -6,6 +6,7 @@ import ErrorPage from './Pages/ErrorPage/ErrorPage'
 import Layout from './Layout/Layout'
 import Home from './Pages/Home/Home'
 import SearchResultsPage from './Pages/SearchResultsPage/SearchResultsPage'
+import { PlaysProvider } from './Providers/PlaysProvider'
 
 const router = createBrowserRouter([
   {
@@ -51,8 +52,9 @@ const router = createBrowserRouter([
 const App = () => {
   return (
     <>
-    
+      <PlaysProvider>
       <RouterProvider router={router} />
+      </PlaysProvider>      
     </>
   );
 };
