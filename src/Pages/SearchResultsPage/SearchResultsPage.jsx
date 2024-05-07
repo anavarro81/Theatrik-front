@@ -1,15 +1,23 @@
-import React from 'react'
+import {useEffect} from 'react'
 import Image from '../../components/atoms/Image/Image'
 import Input from '../../components/atoms/Input/Input'
 import Icon from '../../components/atoms/Icon/Icon'
 import Title from '../../components/atoms/Title/Title'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { useState } from 'react'
 import { usePlays } from '../../Providers/PlaysProvider'
 
 const SearchResultsPage = () => {
   
   const [plays, getPlays, filteredPlays, searchPlay, multipleSearch] = usePlays();
+
+  const {SearchQ} = useParams();
+
+  useEffect(() => {
+    multipleSearch(SearchQ)
+  
+  }, [SearchQ])
+  
     
     const PlayResults = [
         {
@@ -42,7 +50,7 @@ return (
     <Title type={"H1"} text={"Resultados de la busqueda"}/>  / { filteredPlays.length } resultados
 
     {filteredPlays.map((play) => (
-        <div className='mb-2'>
+        <div className='mb-2' key={play._id}>
             
             <Link to={`/info/${play._id}`} > <Title type={"H2"} text={play.title}/> </Link>
             
