@@ -68,6 +68,17 @@ export function PlaysProvider({ children }) {
 
 
 
+  const datos = {
+  plays: plays,
+  getPlays: getPlays,
+  filteredPlays: filteredPlays,
+  updateSlider: filteredPlays, 
+  sliderPlays:  sliderPlays,
+  searchPlay:  searchPlay,
+  multipleSearch:  multipleSearch,
+  getData: getData
+  }
+
 
 
 
@@ -75,7 +86,9 @@ export function PlaysProvider({ children }) {
   return (
 
     
-    <PlaysContext.Provider value={[plays, getPlays, filteredPlays, updateSlider, sliderPlays, searchPlay, multipleSearch, getData]}>
+    //! <PlaysContext.Provider value={[plays, getPlays, filteredPlays, updateSlider, sliderPlays, searchPlay, multipleSearch, getData]}>
+
+    <PlaysContext.Provider value={datos}>
     
     
       {children}

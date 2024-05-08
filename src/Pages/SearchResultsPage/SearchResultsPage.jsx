@@ -1,4 +1,4 @@
-import {useEffect} from 'react'
+import {useContext, useEffect} from 'react'
 import Image from '../../components/atoms/Image/Image'
 import Input from '../../components/atoms/Input/Input'
 import Icon from '../../components/atoms/Icon/Icon'
@@ -9,7 +9,14 @@ import { usePlays } from '../../Providers/PlaysProvider'
 
 const SearchResultsPage = () => {
   
-  const [plays, getPlays, filteredPlays, searchPlay, multipleSearch] = usePlays();
+  // const [[plays, getPlays, filteredPlays, updateSlider, sliderPlays, searchPlay, multipleSearch, getData]] = usePlays();
+
+  const {multipleSearch, filteredPlays, } = usePlays();
+  console.log(multipleSearch);
+  console.log(filteredPlays);
+  
+
+  
 
   const {SearchQ} = useParams();
 
@@ -19,21 +26,6 @@ const SearchResultsPage = () => {
   }, [SearchQ])
   
     
-    const PlayResults = [
-        {
-            id: '660efa1e140f67c10461f9b7',
-            title: "Zona Salvaje",
-            synopsis: "Cuatro relatos que nos muestran..."
-        },
-        {
-            id: '660efa1e140f67c10461f9b8',
-            title: "Pérdida",
-            synopsis: "La pérdida es intrínseca a la vida..."
-        }
-
-    ]
-
-    console.log('filteredPlays > ', filteredPlays.length);
     
 return (
 
