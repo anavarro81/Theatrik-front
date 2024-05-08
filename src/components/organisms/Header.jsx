@@ -12,7 +12,7 @@ const Header = ({placeholder}) => {
   const location = useLocation();
   const navigate = useNavigate();
   
-  const [plays, getPlays, filteredPlays, searchPlay, multipleSearch] = usePlays();
+  const {multipleSearch} = usePlays();
 
   const [searchString, setSearchString] = useState("")
     
