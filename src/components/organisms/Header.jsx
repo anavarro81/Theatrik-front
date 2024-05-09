@@ -17,10 +17,11 @@ const Header = ({placeholder}) => {
   const [searchString, setSearchString] = useState("")
     
   const handleSearch = () => {
-    console.log('Estoy en handleSearch');
+    
     
     if (location.pathname == '/') {  
-      navigate(`/search/${searchString}`)
+      navigate(`/search/?search=${searchString}`)
+      
     }    
     
     multipleSearch(searchString)

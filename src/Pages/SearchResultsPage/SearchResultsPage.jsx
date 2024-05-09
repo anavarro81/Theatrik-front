@@ -1,29 +1,33 @@
-import {useContext, useEffect} from 'react'
+import {useContext, useEffect, useState} from 'react'
 import Image from '../../components/atoms/Image/Image'
 import Input from '../../components/atoms/Input/Input'
 import Icon from '../../components/atoms/Icon/Icon'
 import Title from '../../components/atoms/Title/Title'
-import { Link, useParams } from 'react-router-dom'
-import { useState } from 'react'
+import { Link, useSearchParams } from 'react-router-dom'
 import { usePlays } from '../../Providers/PlaysProvider'
 
 const SearchResultsPage = () => {
   
-  // const [[plays, getPlays, filteredPlays, updateSlider, sliderPlays, searchPlay, multipleSearch, getData]] = usePlays();
-
-  const {multipleSearch, filteredPlays, } = usePlays();
-  console.log(multipleSearch);
-  console.log(filteredPlays);
   
 
+  const [searchTerm, seSearchTerm] = useState();
+  
+  const {multipleSearch, filteredPlays } = usePlays();
+  
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  // Get the value of a specific query param
+  const paramValue = searchParams.get('search');
   
 
-  const {SearchQ} = useParams();
+  const handleSearch = () => {
+    multipleSearch(searchTerm)
+  }
 
   useEffect(() => {
-    multipleSearch(SearchQ)
+    multipleSearch(paramValue)
   
-  }, [SearchQ])
+  }, [paramValue])
   
     
     
@@ -33,27 +37,51 @@ return (
 
 
 
-    <Image/>    
-    <input type="text" placeholder='Obra o asociación' className="border p-3 w-full"/>
-    <button>
-        <Icon type={"Search"}/>
-    </button>
-    
-    <Title type={"H1"} text={"Resultados de la busqueda"}/>  / { filteredPlays.length } resultados
+    <Image/>
 
-    {filteredPlays.map((play) => (
-        <div className='mb-2' key={play._id}>
-            
-            <Link to={`/info/${play._id}`} > <Title type={"H2"} text={play.title}/> </Link>
-            
-            {/* <Link to=`/info/` >    */}
-            <p>  {play.synopsis} </p>
+    <div className='container mx-auto w-[80%]'>
+      <div className='flex flex-col mb-4'  >
+
+      <div className='flex' id='searchResult'>
+          <Title type={"H1"} text={"Resultados de la búsqueda"} />  
+          <Title type={"H2"} text={`/ ${filteredPlays.length} resultados`} />          
         </div>
-    ))}
-  
-  {filteredPlays.length == 0 && <Title type={"H2"} text={"No existen resultados"}>  </Title> }
-  
 
+        <div className='flex w-full' id='search'>
+        <input 
+          type="text" 
+          placeholder='Obra o asociación' 
+          className="border p-3 w-full "
+          onChange={() => seSearchTerm(event.target.value)}
+          />
+        <button onClick={handleSearch}>
+            <Icon type={"Search"}/>
+        </button>
+        </div>    
+      
+      <div>
+
+          {filteredPlays.map((play) => (
+              <div className='mb-2 ' key={play._id}>
+                  
+                  <Link to={`/info/${play._id}`} > <Title type={"H2"} text={play.title}/> </Link>
+                  
+                  {/* <Link to=`/info/` >    */}
+                  <p className='w-fit'>  {play.synopsis} </p>
+              </div>
+          ))}
+
+          {filteredPlays.length == 0 && <Title type={"H2"} text={"No existen resultados"}>  </Title> }
+      </div>  
+      
+      
+      </div>
+    
+
+          
+    
+  
+  </div>
 
     </>
 
