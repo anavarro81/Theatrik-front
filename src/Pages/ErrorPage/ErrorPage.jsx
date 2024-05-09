@@ -14,6 +14,8 @@ const ErrorPage = () => {
 
   console.log(error);
 
+  error.status = 400
+
   return (
     <div
       className="error-page bg-red-950 h-screen text-white text-center flex justify-center items-center"
@@ -25,8 +27,10 @@ const ErrorPage = () => {
       }}
     >
       <div style={fontStyles}>
-        <h1>404 Page not found</h1>  <br /> Se ha producido un error al cargar la página <br />
-        <i> {error.statusText || error.message} </i>
+           <h1> Se ha producido un error al cargar la página  </h1>
+      
+        {error?.status == 404 ?  <p> No se ha encontrado la pagina solicitada </p> : <p> {error?.statusText} </p> }
+
       </div>
     </div>
   );
