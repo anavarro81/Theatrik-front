@@ -4,9 +4,21 @@ import CalendarFilter from "../molecules/CalendarFilter";
 import GenderFilter from "../molecules/GenderFilter";
 import AsociationFilter from "../molecules/AsociationFilter";
 import ButtonIconFilter from "../molecules/ButtonIconFilter";
+import { usePlays } from "../../Providers/PlaysProvider";
 
-export default function FilterBar() {
+export default function FilterBar({/*plays*/}) {
 
+  // const [plays, getPlays, filteredPlays, updateSlider, sliderPlays, searchPlay, multipleSearch, getData] = usePlays();
+
+  const {searchPlay} = usePlays();
+  
+  const handleGenre = (genre) => {
+    console.log("He recibido el genero del hijo: ", genre);
+
+    // const filterGenre = plays.filter(play => play.genre === genre)
+    // console.log(filterGenre);
+    searchPlay(genre)
+  };
 
   const [activeFilter, setActiveFilter] = useState(null);
 

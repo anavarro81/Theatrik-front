@@ -7,20 +7,24 @@ import { useLoaderData } from 'react-router-dom';
 import { usePlays } from '../../Providers/PlaysProvider';
 
 const Home = () => {
+
   
-  const {plays, sliderPlays, getData} = usePlays();   
+  const {plays, sliderPlays, getData, filteredPlays} = usePlays();   
 
   useEffect(() => {
     getData()
     
   }, []);
 
+
+  const playsGallery =  filteredPlays.length > 0 ? filteredPlays : plays
+
   return (
     <>
       
       <HomeSlider data={sliderPlays}/>
       <FilterBar/>
-      <PlayGallery plays={plays}/>
+      <PlayGallery plays={playsGallery}/>
 
     </>
   )

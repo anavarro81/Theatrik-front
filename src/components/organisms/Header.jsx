@@ -11,18 +11,19 @@ const Header = ({placeholder}) => {
 
   const location = useLocation();
   const navigate = useNavigate();
-
+  
   const {multipleSearch} = usePlays();
 
   const [searchString, setSearchString] = useState("")
 
   const handleSearch = () => {
-    console.log('Estoy en handleSearch');
-
-    if (location.pathname == '/') {
-      navigate(`/search/${searchString}`)
-    }
-
+    
+    
+    if (location.pathname == '/') {  
+      navigate(`/search/?search=${searchString}`)
+      
+    }    
+    
     multipleSearch(searchString)
 
   }
@@ -37,7 +38,7 @@ const Header = ({placeholder}) => {
     <Link to='/'> 
     <Icon type={"Logo"}/>
     </Link>
-    <div className='space-x-4 m-2 flex' >
+    <div className='space-x-4 m-2 flex' >      
       <input type="text" placeholder='Obra o asociación' className="border p-3 w-full" onChange={() => setSearchString(event.target.value)}/>
       <button onClick={handleSearch}>
       <Icon type={"Search"}/>

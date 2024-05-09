@@ -14,18 +14,21 @@ export function PlaysProvider({ children }) {
     fetch("http://localhost:5002/play/getAllPlays")
       .then((res) => res.json())
       .then((data) => {
-        setPlays(data);
-      });
+        setPlays(data)        
+        
+        
+        });
   };
 
   const getData = () => {
     fetch("http://localhost:5002/play/getAllPlays")
-      .then((res) => res.json())
-      .then((data) => {
-        setPlays(data);
-        updateSlider(data);
+    .then((res) => res.json())
+    .then((data) => {
+      setPlays(data)        
+      updateSlider(data)      
       });
-  };
+    
+  }
 
   // Función para buscar obras de teatro según un término y un criterio de búsqueda
   const searchPlay = (searchParams) => {
@@ -40,64 +43,59 @@ export function PlaysProvider({ children }) {
   };
 
   const multipleSearch = (searchString) => {
-    const results = plays.filter((play) => {
-      if (
-        play.title.includes(searchString) ||
-        play.company_name.includes(searchString)
-      ) {
-        return play;
-      }
-    });
 
-    setFilteredPlays(results);
-  };
+    
+    
+
+    const results = plays.filter(play => {
+      
+      if (play.title.includes(searchString) || play.company_name.includes(searchString)) {
+          return play
+      }
+    })
+
+    
+    setFilteredPlays(results)
+
+  }
 
   const updateSlider = (plays) => {
-    const currentDate = new Date("2023-11-05");
-    const data = plays
-      ?.filter((play) => new Date(play.date) >= currentDate)
-      .slice(0, 5);
-    setsliderPlays(data);
-  };
+    
+    const currentDate = (new Date("2023-11-05"))   
+    const data = plays?.filter(play => new Date(play.date) >= currentDate).slice(0,5);
+    setsliderPlays(data)
+  }
 
-  //filtramos por fecha yeray y antonio
-  const searchDate = (dates) => {
-    const [startDate, endDate] = dates;
 
-    //combertir las fechas a formato JS
-    const fechaInicio = new Date(startDate);
-    const fechaFinal = new Date(endDate);
-
-    console.log(`Inicio ${fechaInicio} \n final ${endDate}`);
-
-    const result = plays.filter((play) => {
-      const fechaObra = new Date(play.date);
-
-      if (fechaInicio <= fechaObra && fechaObra <= fechaFinal) {
-        return play;
-      }
-    });
-    setFilteredPlays(result);
-  };
 
   const datos = {
-    plays: plays,
-    getPlays: getPlays,
-    filteredPlays: filteredPlays,
-    updateSlider: filteredPlays,
-    sliderPlays: sliderPlays,
-    searchPlay: searchPlay,
-    multipleSearch: multipleSearch,
-    getData: getData,
-    searchDate: searchDate,
-  };
+  plays: plays,
+  getPlays: getPlays,
+  filteredPlays: filteredPlays,
+  updateSlider: filteredPlays, 
+  sliderPlays:  sliderPlays,
+  searchPlay:  searchPlay,
+  multipleSearch:  multipleSearch,
+  getData: getData
+  }
+
+
+
 
   // Se devuelve el contexto proporcionando los estados y las funciones a través del contexto
   return (
+
+    
     //! <PlaysContext.Provider value={[plays, getPlays, filteredPlays, updateSlider, sliderPlays, searchPlay, multipleSearch, getData]}>
 
-    <PlaysContext.Provider value={datos}>{children}</PlaysContext.Provider>
+    <PlaysContext.Provider value={datos}>
+    
+    
+      {children}
+    </PlaysContext.Provider>
   );
+
+
 }
 
 
