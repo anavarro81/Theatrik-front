@@ -7,6 +7,7 @@ import { useLoaderData } from 'react-router-dom';
 import { usePlays } from '../../Providers/PlaysProvider';
 
 const Home = () => {
+
   
   const {plays, sliderPlays, getData} = usePlays();   
 

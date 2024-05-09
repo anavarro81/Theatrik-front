@@ -1,4 +1,6 @@
+
 import {useContext, useEffect, useState} from 'react'
+
 import Image from '../../components/atoms/Image/Image'
 import Input from '../../components/atoms/Input/Input'
 import Icon from '../../components/atoms/Icon/Icon'
@@ -8,6 +10,7 @@ import { usePlays } from '../../Providers/PlaysProvider'
 
 const SearchResultsPage = () => {
   
+
   
 
   const [searchTerm, seSearchTerm] = useState();
