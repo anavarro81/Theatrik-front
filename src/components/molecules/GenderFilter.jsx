@@ -3,21 +3,36 @@ import { PlaysProvider, usePlays } from "../../Providers/PlaysProvider"
 
 
 
-const GenderFilter = ({ children }) => {
-  console.log(children)
+const GenderFilter = ({ genero }) => {
+
+
+  const  handleGenre = () => {
+    
+    console.log(event.target.value);
+    console.log(event.target.name);
+
+    const searchParams = {
+      searchTerm: event.target.value,
+      searchFor:  event.target.name
+    }
+
+    genero(searchParams)
+  }
+  
   
   return (
-    <UserContext.Consumer>
-      {(children) => (
+    
+      
         <div>
           <p className="font-medium leading-6 text-slate-500 h-[0rem] flex items-center justify-center">
             Genero
           </p>
           <div className="w-[9rem] h-[37px] mt-3">
             <select
-              name="selectedGender"
+              name="genre"
               defaultValue="orange"
               className="w-full h-full rounded"
+              onChange={handleGenre}
             >
               <option value="comedia">Comedia</option>
               <option value="drama">Drama</option>
@@ -25,8 +40,8 @@ const GenderFilter = ({ children }) => {
             </select>
           </div>
         </div>
-      )}
-    </UserContext.Consumer>
+      
+    
   );
 };
 
