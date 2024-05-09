@@ -36,7 +36,7 @@ export function PlaysProvider({ children }) {
 
     // Filtrar las obras de teatro según el criterio de búsqueda y establecerlas en el estado de obras filtradas
     const result = plays.filter((play) => {
-      return play[searchFor].includes(searchTerm);
+      return play[searchTerm].includes(searchFor);
     });
 
     setFilteredPlays(result);
