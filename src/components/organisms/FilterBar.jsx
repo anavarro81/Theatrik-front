@@ -74,7 +74,7 @@ export default function FilterBar({/*plays*/}) {
         </div>
 
         <div className="md:mr-14">
-          {activeFilter === "Gender" && <GenderFilter />}
+          {activeFilter === "Gender" && <GenderFilter genero={handleGenre}/>}
         </div>
       </div>
     </>

@@ -23,7 +23,7 @@ const PlayCard = ({play}) => {
       <div id='body-card' className='px-3 py-1 space-y-2 text-base' >
 
         <Title type={"H2"} variant={"white"} text={play.title} />
-        <Title type={"H3"} variant={"orange"} text={play.company_name[0]} />
+        <Title type={"H3"} variant={"orange"} text={play.company_name} />
         <Text text={formatedDate} variant={"white"} />
 
         {/* <div className='flex justify-center'> */}
