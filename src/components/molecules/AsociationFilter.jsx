@@ -9,7 +9,7 @@ function classNames(...classes) {
 
 export default function AsociationFilter({ children }) {
   const [selected, setSelected] = useState(null);
-  const [plays, getPlays, searchPlay, filteredPlays] = usePlays();
+  const { plays, getPlays, searchPlay } = usePlays();
   const searchParams = { searchTerm: "", searchFor: "" };
   const [selectedCompany, setSelectedCompany] = useState("");
 
