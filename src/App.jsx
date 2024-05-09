@@ -40,7 +40,7 @@ const router = createBrowserRouter([
 
       {
 
-        path: "/search/:SearchQ",
+        path: "/search",
         element: <SearchResultsPage/>
       },
 
