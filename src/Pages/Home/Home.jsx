@@ -9,7 +9,7 @@ import { usePlays } from '../../Providers/PlaysProvider';
 const Home = () => {
 
   
-  const {plays, sliderPlays, getData} = usePlays();   
+  const {plays, sliderPlays, getData, filteredPlays} = usePlays();   
 
   useEffect(() => {
     getData()

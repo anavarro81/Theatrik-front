@@ -8,7 +8,9 @@ import { usePlays } from "../../Providers/PlaysProvider";
 
 export default function FilterBar({/*plays*/}) {
 
-  const [plays, getPlays, filteredPlays, updateSlider, sliderPlays, searchPlay, multipleSearch, getData] = usePlays();
+  // const [plays, getPlays, filteredPlays, updateSlider, sliderPlays, searchPlay, multipleSearch, getData] = usePlays();
+
+  const {searchPlay} = usePlays();
   
   const handleGenre = (genre) => {
     console.log("He recibido el genero del hijo: ", genre);
