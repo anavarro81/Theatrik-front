@@ -2,23 +2,24 @@ import React, { useState, useEffect } from "react";
 import { usePlays } from "../../Providers/PlaysProvider";
 
 
-
 const GenderFilter = ({ genero }) => {
 
 
+
+  
   const  handleGenre = () => {
-    
-    console.log(event.target.value);
-    console.log(event.target.name);
-
-    const searchParams = {
-      searchTerm: event.target.value,
-      searchFor:  event.target.name
-    }
-
-    genero(searchParams)
+  
+  console.log(event.target.value);
+  console.log(event.target.name);
+  
+  const searchParams = {
+    searchTerm: event.target.value,
+    searchFor:  event.target.name
   }
   
+  genero(searchParams)
+}
+
   
   return (
     
