@@ -28,16 +28,27 @@ export function PlaysProvider({ children }) {
   };
 
   // Función para buscar obras de teatro según un término y un criterio de búsqueda
-  const searchPlay = (searchParams) => {
+  const searchPlayGenre = (searchParams) => {
     const { searchTerm, searchFor } = searchParams;
 
     // Filtrar las obras de teatro según el criterio de búsqueda y establecerlas en el estado de obras filtradas
     const result = plays.filter((play) => {
-      return play[searchTerm].includes(searchFor);
+      return play[searchFor].includes(searchTerm);
     });
 
     setFilteredPlays(result);
   };
+
+   const searchPlayAsociation = (searchParams) => {
+     const { searchTerm, searchFor } = searchParams;
+
+     // Filtrar las obras de teatro según el criterio de búsqueda y establecerlas en el estado de obras filtradas
+     const result = plays.filter((play) => {
+       return play[searchTerm].includes(searchFor);
+     });
+
+     setFilteredPlays(result);
+   };
 
   const multipleSearch = (searchString) => {
     const results = plays.filter((play) => {
@@ -86,7 +97,8 @@ export function PlaysProvider({ children }) {
     filteredPlays: filteredPlays,
     updateSlider: filteredPlays,
     sliderPlays: sliderPlays,
-    searchPlay: searchPlay,
+    searchPlayGenre: searchPlayGenre,
+    searchPlayAsociation: searchPlayAsociation,
     multipleSearch: multipleSearch,
     getData: getData,
     searchDate: searchDate,
