@@ -8,8 +8,8 @@ const GenderFilter = ({ genero }) => {
 
   const  handleGenre = () => {
     
-    console.log(event.target.value);
-    console.log(event.target.name);
+    console.log("searchTerm: ", event.target.value);
+    console.log("searchFor: ", event.target.name);
 
     const searchParams = {
       searchTerm: event.target.value,
