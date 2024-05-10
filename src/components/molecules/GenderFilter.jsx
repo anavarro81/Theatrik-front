@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { usePlays } from "../../Providers/PlaysProvider";
 
 
-
 const GenderFilter = ({ genero }) => {
 
 
