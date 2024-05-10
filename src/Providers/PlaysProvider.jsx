@@ -51,10 +51,14 @@ export function PlaysProvider({ children }) {
    };
 
   const multipleSearch = (searchString) => {
+    
+    
+    
     const results = plays.filter((play) => {
+      
       if (
-        play.title.includes(searchString) ||
-        play.company_name.includes(searchString)
+        play.title.toLowerCase().includes(searchString.toLowerCase()) ||
+        play.company_name.toLowerCase().includes(searchString.toLowerCase())
       ) {
         return play;
       }
