@@ -3,23 +3,21 @@ import { usePlays } from "../../Providers/PlaysProvider";
 
 
 const GenderFilter = ({ genero }) => {
+const { searchPlayGenre } = usePlays();
 
+  const  handleGenre = (event) => {
+    
+    console.log("searchTerm: ", event.target.value);
+    console.log("searchFor: ", event.target.name);
 
+    const searchParams = {
+      searchTerm: event.target.value,
+      searchFor:  event.target.name
+    }
 
-  
-  const  handleGenre = () => {
-  
-  console.log(event.target.value);
-  console.log(event.target.name);
-  
-  const searchParams = {
-    searchTerm: event.target.value,
-    searchFor:  event.target.name
+    searchPlayGenre(searchParams);
   }
   
-  genero(searchParams)
-}
-
   
   return (
     

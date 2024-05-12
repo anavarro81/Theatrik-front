@@ -7,13 +7,14 @@ import Icon from '../../components/atoms/Icon/Icon'
 import Title from '../../components/atoms/Title/Title'
 import { Link, useSearchParams } from 'react-router-dom'
 import { usePlays } from '../../Providers/PlaysProvider'
+import ImgButacas from '../../../public/ButacasTeatro.jpg'
 
 const SearchResultsPage = () => {
   
 
   
 
-  const [searchTerm, seSearchTerm] = useState();
+  const [searchTerm, setSearchTerm] = useState();
   
   const {multipleSearch, filteredPlays } = usePlays();
   
@@ -25,6 +26,12 @@ const SearchResultsPage = () => {
 
   const handleSearch = () => {
     multipleSearch(searchTerm)
+  }
+
+  const handleKeyPressed = () => {    
+    if (event.key === 'Enter') {      
+      multipleSearch(searchTerm)
+    }
   }
 
   useEffect(() => {
@@ -39,8 +46,9 @@ return (
     <>
 
 
+    <Image url={ImgButacas} alt={"butacas teatro"} variant={'imageHeader'}/>
 
-    <Image/>
+
 
     <div className='container mx-auto w-[80%]'>
       <div className='flex flex-col mb-4'  >
@@ -55,7 +63,8 @@ return (
           type="text" 
           placeholder='Obra o asociación' 
           className="border p-3 w-full "
-          onChange={() => seSearchTerm(event.target.value)}
+          onChange={() => setSearchParams(event.target.value)}
+          onKeyDown={handleKeyPressed}
           />
         <button onClick={handleSearch}>
             <Icon type={"Search"}/>

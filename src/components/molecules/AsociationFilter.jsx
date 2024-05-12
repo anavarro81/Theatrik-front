@@ -9,7 +9,7 @@ function classNames(...classes) {
 
 export default function AsociationFilter({ children }) {
   const [selected, setSelected] = useState(null);
-  const { plays, getPlays, searchPlay } = usePlays();
+  const { plays, getPlays, searchPlayAsociation } = usePlays();
   const searchParams = { searchTerm: "", searchFor: "" };
   const [selectedCompany, setSelectedCompany] = useState("");
 
@@ -21,7 +21,7 @@ export default function AsociationFilter({ children }) {
     searchParams.searchFor = busqueda
     // searchParams.searchFor = "cualquiera";
     // console.log("searchParams >> ", searchParams);
-    searchPlay(searchParams);
+    searchPlayAsociation(searchParams);
   };
   // console.log("selectedCompany >> ", selectedCompany);
 
