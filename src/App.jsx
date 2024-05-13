@@ -18,7 +18,7 @@ const router = createBrowserRouter([
         index: true,
         element: <Home />,
         loader: async () => {
-          return fetch("http://localhost:5002/play/getAllPlays");          
+          return fetch("http://localhost:5002/play/getAllPlays");
         },
       },
 
@@ -39,7 +39,8 @@ const router = createBrowserRouter([
       },
 
       {
-        path: "/SearchResultsPage",
+
+        path: "/search",
         element: <SearchResultsPage/>
       },
 
@@ -52,7 +53,8 @@ const App = () => {
     <>
       <PlaysProvider>
       <RouterProvider router={router} />
-      </PlaysProvider>
+      </PlaysProvider>      
+
     </>
   );
 };

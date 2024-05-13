@@ -3,35 +3,53 @@ import SearchBar from '../molecules/SearchBar'
 import Icon from '../atoms/Icon/Icon'
 import { usePlays } from '../../Providers/PlaysProvider'
 import { useState } from 'react'
-import {useLocation, Link} from "react-router-dom";
+import {useLocation, Link, useNavigate} from "react-router-dom";
 
 
 
 const Header = ({placeholder}) => {
 
-  let location = useLocation();
-  console.log(location);
+  const location = useLocation();
+  console.log(location.pathname);
   
-  const [plays, getPlays, filteredPlays, searchPlay, multipleSearch] = usePlays();
+  const navigate = useNavigate();
+  
+  const {multipleSearch} = usePlays();
 
   const [searchString, setSearchString] = useState("")
-    
-  const handleSearch = () => {
-    console.log('Estoy en handleSearch');    
-    multipleSearch(searchString)
 
+  const handleSearch = () => {   
+    
+    if (location.pathname != '/search/') {  
+      navigate(`/search/?search=${searchString}`)      
+    }        
+    multipleSearch(searchString)
   }
 
+  const handleKeyPressed = () => {
 
+    if (event.key === 'Enter')
+      if (location.pathname != '/search/') {
+        navigate(`/search/?search=${searchString}`)  
+      } else {
+        multipleSearch(searchString)
+    }
+  }
 
-  
   return (
     <>
-    
+
     <div className='flex flex-row justify-between px-4 mb-4'>
+    <Link to='/'> 
     <Icon type={"Logo"}/>
+    </Link>
     <div className='space-x-4 m-2 flex' >      
-      <input type="text" placeholder='Obra o asociación' className="border p-3 w-full" onChange={() => setSearchString(event.target.value)}/>
+      <input type="text" 
+      placeholder='Obra o asociación' 
+      className="border p-3 w-full" 
+      onChange={() => setSearchString(event.target.value)}
+      onKeyDown={handleKeyPressed}
+      />
       <button onClick={handleSearch}>
       <Icon type={"Search"}/>
       </button>
@@ -40,10 +58,10 @@ const Header = ({placeholder}) => {
     </div>
     </div>
     </>
-    
 
-    
+
+
   )
 }
 
-export default Header
+export default Header;
