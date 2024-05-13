@@ -9,7 +9,8 @@ const Title = ({type, variant, text}) => {
         "text-greyDesign": variant === 'gray',
         "text-white": variant === 'white',        
         "text-white text-lg mb-0.5 md:text-5xl md:mb-6 md:pt-6": variant === 'slider-title-white',
-        "text-orangeDesign text-xl mb-0.5 md:text-2xl md:mb-1.5": variant === 'slider-title-orange'        
+        "text-orangeDesign text-xl mb-0.5 md:text-2xl md:mb-1.5": variant === 'slider-title-orange',
+        "text-white truncate": variant === 'card-title-white'        
       })
 
 
