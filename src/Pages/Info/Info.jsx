@@ -17,7 +17,7 @@ const Info = () => {
 
   return (
     <div className="parent p-2 border border-black border-solid rounded-lg mt-10 flex items-center justify-center inline-block max-w-2xl m-auto flex-col md:flex-row">
-      <div className="left mb-10 m-auto pl-4 pr-4 flex-col w-72 sm:w-112 overflow-hidden whitespace-normal">
+      <div className="left mb-10 m-auto pl-4 pr-4 flex-col w-72 sm:w-112 break-all">
         <h2>
           <b>{play.title}</b>
         </h2>
@@ -41,7 +41,9 @@ const Info = () => {
         <h3 className="text-xs leading-3 mb-1">
           <b>Cartel:</b>
         </h3>
-        <h4 className="mb-1 text-[10px] mb-1">{play.cartel}</h4>
+        <h4 className="mb-1 text-[10px] mb-1 whitespace-break-spaces">
+          {play.cartel}
+        </h4>
 
         <div className="box border-sm border border-black rounded-lg w-52 h-auto mx-auto text-[9px] p-1 mt-4">
           <p className="font-bold inline ml-1 text-xs">

@@ -6,7 +6,7 @@ const BookingBtn = ({text, variant, url, icon}) => {
   const buttonClasses = classnames('button', {
 
     "text-greyDesign font-bold bg-white hover:bg-orangeDesign hover:text-white": variant === 'gray',    
-    "bg-white w-full ": variant === 'button-playCard',
+    "text-greyDesign font-bold bg-white w-full hover:bg-orangeDesign hover:text-white": variant === 'button-playCard',
     "bg-orangeDesing w-full": variant === 'orange'        
   });
 
