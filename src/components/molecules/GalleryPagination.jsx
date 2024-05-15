@@ -1,3 +1,4 @@
+import Icon from "../atoms/Icon/Icon";
 
 const Pagination = ({totalPlays, playsPerPage, setCurrentPage, currentPage}) => {
 
@@ -10,18 +11,22 @@ const Pagination = ({totalPlays, playsPerPage, setCurrentPage, currentPage}) => 
     return (
         <div className='flex justify-center py-6 gap-x-6'>
             <button onClick={() => setCurrentPage(currentPage - 1)}
-            disabled={currentPage === 1}>prev</button>
+            disabled={currentPage === 1}>
+                <Icon type={"ChevronLeft"}/>
+            </button>
             {pages?.map((page, index) => 
                     <button 
                         key={index} 
                         onClick={() => setCurrentPage(page)} 
-                        className={page == currentPage ? "text-bold bg-orangeDesign text-white w-8 h-8 rounded-full" : "text-grayDesign"}>
+                        className={page == currentPage ? "text-bold bg-orangeDesign text-white w-8 h-8 rounded-full" : "text-blackDesign text-bold"}>
                         {page}
                     </button>
                 )
             }
             <button onClick={() => setCurrentPage(currentPage + 1)}
-            disabled={currentPage === Math.ceil(totalPlays / playsPerPage)}>post</button>
+            disabled={currentPage === Math.ceil(totalPlays / playsPerPage)}>
+                <Icon type={"ChevronRight"}/>
+            </button>
         </div>
     );
 };

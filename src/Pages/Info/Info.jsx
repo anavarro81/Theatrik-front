@@ -16,16 +16,15 @@ const Info = () => {
   const h2 = "text-[14px] mb-px ml-1";
 
   return (
-    <div className="min-h-screen">
-      <div className="parent p-2 border border-black border-solid rounded-lg mt-10 flex items-center justify-center inline-block max-w-5xl m-auto flex-col md:flex-row">
-        <div className="left mb-10 m-auto pl-3 pr-3 flex-col w-88 sm:w-112 break-all">
-          <h1 className="text-[22px] leading-4 mb-2 mt-2">
+    <div className="min-h-screen ">
+      <div className="parent p-2 border border-black border-solid rounded-lg mt-10 flex items-center justify-center inline-block max-w-2xl m-auto flex-col md:flex-row">
+        <div className="left mb-10 m-auto pl-4 pr-4 flex-col w-72 sm:w-112 break-all">
+          <h2>
             <b>{play.title}</b>
-          </h1>
+          </h2>
+          <h3 className="text-[12px] leading-4 mb-1">{play.synopsis}</h3>
 
-          <h3 className="text-[16px] leading-4 mb-4">{play.synopsis}</h3>
-
-          <h3 className="text-[18px] leading-3 mb-2">
+          <h3 className="text-xs leading-3 mb-1">
             <b>Intérpretes:</b>
           </h3>
           <h4 className="mb-1 text-[14px] mb-4">{play.actors}</h4>
@@ -33,14 +32,14 @@ const Info = () => {
           <h3 className="text-[18px] leading-3 mb-2">
             <b>Dirección de escena avión:</b>
           </h3>
-          <h4 className="mb-1 text-[14px] mb-4">{play.director}</h4>
+          <h4 className="mb-1 text-[10px] mb-1">{play.director}</h4>
 
-          <h3 className="text-[18px] leading-3 mb-2">
+          <h3 className="text-xs leading-3 mb-1">
             <b>Escenografía y vestuario:</b>
           </h3>
-          <h4 className="mb-1 text-[14px] mb-4">{play.company_name}</h4>
+          <h4 className="mb-1 text-[10px] mb-1">{play.company_name}</h4>
 
-          <h3 className="text-[18px] leading-3 mb-2">
+          <h3 className="text-xs leading-3 mb-1">
             <b>Cartel:</b>
           </h3>
           <h4 className="mb-1 text-[14px] mb-4 whitespace-break-spaces">
