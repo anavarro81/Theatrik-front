@@ -9,6 +9,8 @@ export function PlaysProvider({ children }) {
   const [filteredPlays, setFilteredPlays] = useState([]);
   const [sliderPlays, setsliderPlays] = useState([]);
 
+
+
   // Función para obtener todas las obras de teatro desde el servidor
   const getPlays = () => {
     fetch("http://localhost:5002/play/getAllPlays")
@@ -51,10 +53,14 @@ export function PlaysProvider({ children }) {
    };
 
   const multipleSearch = (searchString) => {
+    
+    
+    
     const results = plays.filter((play) => {
+      
       if (
-        play.title.includes(searchString) ||
-        play.company_name.includes(searchString)
+        play.title.toLowerCase().includes(searchString.toLowerCase()) ||
+        play.company_name.toLowerCase().includes(searchString.toLowerCase())
       ) {
         return play;
       }
@@ -91,6 +97,13 @@ export function PlaysProvider({ children }) {
     setFilteredPlays(result);
   };
 
+  
+
+  // Borra todos los filtros. 
+  const deleteFilters = () => {
+    setFilteredPlays([])
+  }
+
   const datos = {
     plays: plays,
     getPlays: getPlays,
@@ -101,8 +114,12 @@ export function PlaysProvider({ children }) {
     searchPlayAsociation: searchPlayAsociation,
     multipleSearch: multipleSearch,
     getData: getData,
-    searchDate: searchDate,
+    searchDate: searchDate,    
+    deleteFilters
+
   };
+
+  
 
   // Se devuelve el contexto proporcionando los estados y las funciones a través del contexto
   return (
