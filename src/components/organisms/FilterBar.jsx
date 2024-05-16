@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Links from "../molecules/Links";
+import Text from "../atoms/Text/Text";
 import CalendarFilter from "../molecules/CalendarFilter";
 import GenderFilter from "../molecules/GenderFilter";
 import AsociationFilter from "../molecules/AsociationFilter";
@@ -10,7 +11,7 @@ export default function FilterBar({/*plays*/}) {
 
   // const [plays, getPlays, filteredPlays, updateSlider, sliderPlays, searchPlay, multipleSearch, getData] = usePlays();
 
-  const {searchPlay} = usePlays();
+  ;
   
   const handleGenre = (genre) => {
     console.log("He recibido el genero del hijo: ", genre);
@@ -34,6 +35,11 @@ export default function FilterBar({/*plays*/}) {
           <div className="h-full flex items-center mr-6">
             <Links />
           </div>
+        </div>
+
+        <div>
+          <Text text="Borrar filtros"  variant={"deleteFilterLink"} id={"deleteFilterLink"}> </Text>
+          {/* //text, variant, type, url */}
         </div>
 
         <div className="bg-gray-300 w-full flex justify-around md:justify-end ">
