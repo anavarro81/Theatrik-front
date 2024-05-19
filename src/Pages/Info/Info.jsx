@@ -17,36 +17,36 @@ const Info = () => {
 
   return (
     <div className="min-h-screen ">
-      <div className="parent p-2 border border-black border-solid rounded-lg mt-10 flex items-center justify-center inline-block max-w-2xl m-auto flex-col md:flex-row">
-        <div className="left mb-10 m-auto pl-4 pr-4 flex-col w-72 sm:w-112 break-all">
-          <h2>
+      <div className="parent p-2  rounded-lg mt-10 flex items-center justify-center inline-block max-w-screen-2xl m-auto flex-col md:flex-row">
+        <div className="left mb-18 m-auto pl-4 pr-4 flex-col w-2/4 sm:w-112 break-all">
+          <h2 className="text-[24px]">
             <b>{play.title}</b>
           </h2>
-          <h3 className="text-[12px] leading-4 mb-1">{play.synopsis}</h3>
+          <h3 className="text-[16px] leading-4 mb-4">{play.synopsis}</h3>
 
-          <h3 className="text-xs leading-3 mb-1">
+          <h3 className="text-[20px] leading-3 mb-2">
             <b>Intérpretes:</b>
           </h3>
-          <h4 className="mb-1 text-[14px] mb-4">{play.actors}</h4>
+          <h4 className="mb-1 text-[16px] mb-4">{play.actors}</h4>
 
-          <h3 className="text-[18px] leading-3 mb-2">
-            <b>Dirección de escena avión:</b>
+          <h3 className="text-[20px] leading-3 mb-2">
+            <b>Dirección de escena:</b>
           </h3>
-          <h4 className="mb-1 text-[10px] mb-1">{play.director}</h4>
+          <h4 className="mb-1 text-[16px] mb-4">{play.director}</h4>
 
-          <h3 className="text-xs leading-3 mb-1">
+          <h3 className="text-[20px] leading-3 mb-2">
             <b>Escenografía y vestuario:</b>
           </h3>
-          <h4 className="mb-1 text-[10px] mb-1">{play.company_name}</h4>
+          <h4 className="mb-1 text-[16px] mb-4">{play.company_name}</h4>
 
-          <h3 className="text-xs leading-3 mb-1">
+          <h3 className="text-[20px] leading-3 mb-2">
             <b>Cartel:</b>
           </h3>
-          <h4 className="mb-1 text-[14px] mb-4 whitespace-break-spaces">
+          <h4 className="mb-1 text-[16px] mb-4 whitespace-break-spaces">
             {play.cartel}
           </h4>
 
-          <div className="box border-sm border border-black rounded-lg w-60 h-auto mx-auto text-[9px] p-1 mt-4">
+          <div className="box border-sm border border-black rounded-lg w-60 h-auto mx-auto text-[9px] p-1 mt-8">
             <p className="font-bold inline ml-1 text-[16px]">
               Acerca de {play.company_name}
             </p>
@@ -77,12 +77,12 @@ const Info = () => {
           </div>
         </div>
 
-        <div className="right m-auto pr-2 pl-4 flex-col lg:w-160 mb-22">
+        <div className="right m-auto pr-2 pl-4 flex-col w-96 mb-22">
           <img
             src={play.cartel}
-            className="rounded-2xl h-full mt-2 min-w-80"
+            className="rounded-2xl h-full mt-4 min-w-80"
           ></img>
-          <div className="box2 border-sm border border-black rounded-lg w-60 h-auto mx-auto text-[9px] p-1 mt-40 ">
+          <div className="box2 border-sm border border-black rounded-lg w-60 h-auto mx-auto text-[9px] p-1 mt-10 ">
             <div>
               <p className="font-bold inline text-[16px] ml-1">Title:</p>
               <h2 className={h2}>
