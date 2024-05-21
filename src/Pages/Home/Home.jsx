@@ -9,7 +9,7 @@ import { usePlays } from '../../Providers/PlaysProvider';
 const Home = () => {
 
   
-  const {plays, sliderPlays, getData, filteredPlays} = usePlays();   
+  const {plays, sliderPlays, getData, filteredPlays} = usePlays();
 
   useEffect(() => {
     getData()
@@ -18,6 +18,8 @@ const Home = () => {
 
 
   const playsGallery =  filteredPlays.length > 0 ? filteredPlays : plays
+
+
 
   return (
     <>
