@@ -10,7 +10,7 @@ import {useLocation, Link, useNavigate} from "react-router-dom";
 const Header = ({placeholder}) => {
 
   const location = useLocation();
-  console.log(location.pathname);
+  // console.log(location.pathname);
   
   const navigate = useNavigate();
   
