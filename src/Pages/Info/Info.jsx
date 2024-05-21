@@ -13,48 +13,48 @@ const Info = () => {
   const play = useLoaderData();
   const company = play.company[0];
 
-  const h2 = "text-[14px] mb-px ml-1";
+  const h2 = "text-[20px] mb-px ml-1";
 
   return (
     <div className="min-h-screen ">
       <div className="parent p-2  rounded-lg mt-10 flex items-center justify-center inline-block max-w-screen-2xl m-auto flex-col md:flex-row">
-        <div className="left mb-18 m-auto pl-4 pr-4 flex-col w-2/4 sm:w-112 break-all">
-          <h2 className="text-[24px]">
+        <div className="left mb-18 m-auto pl-20 pr-18 flex-col w-3/4 sm:w-112 break-all">
+          <h2 className="text-[32px]">
             <b>{play.title}</b>
           </h2>
-          <h3 className="text-[16px] leading-4 mb-4">{play.synopsis}</h3>
+          <h3 className="text-[18px] leading-2 mb-4 ">{play.synopsis}</h3>
 
-          <h3 className="text-[20px] leading-3 mb-2">
+          <h3 className="text-[22px] leading-3 mb-2">
             <b>Intérpretes:</b>
           </h3>
-          <h4 className="mb-1 text-[16px] mb-4">{play.actors}</h4>
+          <h4 className="mb-1 text-[18px] mb-4">{play.actors}</h4>
 
-          <h3 className="text-[20px] leading-3 mb-2">
+          <h3 className="text-[22px] leading-3 mb-2">
             <b>Dirección de escena:</b>
           </h3>
-          <h4 className="mb-1 text-[16px] mb-4">{play.director}</h4>
+          <h4 className="mb-1 text-[18px] mb-4">{play.director}</h4>
 
-          <h3 className="text-[20px] leading-3 mb-2">
+          <h3 className="text-[22px] leading-3 mb-2">
             <b>Escenografía y vestuario:</b>
           </h3>
-          <h4 className="mb-1 text-[16px] mb-4">{play.company_name}</h4>
+          <h4 className="mb-1 text-[18px] mb-4">{play.company_name}</h4>
 
-          <h3 className="text-[20px] leading-3 mb-2">
+          <h3 className="text-[22px] leading-3 mb-2">
             <b>Cartel:</b>
           </h3>
-          <h4 className="mb-1 text-[16px] mb-4 whitespace-break-spaces">
+          <h4 className="mb-1 text-[18px] mb-4 whitespace-break-spaces">
             {play.cartel}
           </h4>
 
-          <div className="box border-sm border border-black rounded-lg w-60 h-auto mx-auto text-[9px] p-1 mt-8">
-            <p className="font-bold inline ml-1 text-[16px]">
+          <div className="box border-sm border border-black rounded-lg w-72 h-auto mx-auto text-[9px] p-1 mt-8">
+            <p className="font-bold inline ml-1 text-[20px]">
               Acerca de {play.company_name}
             </p>
             <h2 className={h2}>
               <img
                 src={GlobeIcon}
                 alt="Globe icon"
-                className="inline-block h-4 w-3 mr-2"
+                className="inline-block h-5 w-6 mr-2"
               />
               {company.web}
             </h2>
@@ -62,7 +62,7 @@ const Info = () => {
               <img
                 src={MailIcon}
                 alt="Mail icon"
-                className="inline-block h-4 w-3 mr-2"
+                className="inline-block h-5 w-6 mr-2"
               />
               {company.email}
             </h2>
@@ -70,7 +70,7 @@ const Info = () => {
               <img
                 src={SmartphoneIcon}
                 alt="Smartphone icon"
-                className="inline-block h-4 w-3 mr-2"
+                className="inline-block h-5 w-6 mr-2"
               />
               {company.phone}
             </h2>
@@ -82,14 +82,14 @@ const Info = () => {
             src={play.cartel}
             className="rounded-2xl h-full mt-4 min-w-80"
           ></img>
-          <div className="box2 border-sm border border-black rounded-lg w-60 h-auto mx-auto text-[9px] p-1 mt-10 ">
+          <div className="box2 border-sm border border-black rounded-lg w-90 h-auto mx-auto text-[20px] p-1 mt-4 ">
             <div>
-              <p className="font-bold inline text-[16px] ml-1">Title:</p>
+              <p className="font-bold inline text-[20px] ml-1">Title:</p>
               <h2 className={h2}>
                 <img
                   src={MapIcon}
                   alt="Map icon"
-                  className="inline-block h-4 w-3 mr-2"
+                  className="inline-block h-5 w-6 mr-2"
                 />
                 {play.place}
               </h2>
@@ -97,7 +97,7 @@ const Info = () => {
                 <img
                   src={CalendarDateIcon}
                   alt="Calendar icon"
-                  className="inline-block h-4 w-3 mr-2"
+                  className="inline-block h-5 w-6 mr-2"
                 />
                 {play.date.substring(0, 10)}
               </h2>
@@ -107,13 +107,13 @@ const Info = () => {
                   <img
                     src={ClockIcon}
                     alt="Clock icon"
-                    className="inline-block h-4 w-3 mr-2"
+                    className="inline-block h-5 w-6 mr-2"
                   />
                   <span>{play.time}</span>
                 </h2>
                 <Link
                   to={`/booking/${play._id}`}
-                  className="bg-orange-500 text-[14px] w-20 h-6 hover:bg-blue-700 text-white font-bold flex items-center justify-center py-2 px-2 rounded ml-20"
+                  className="bg-orange-500 text-[18px] w-32 h-8 hover:bg-blue-700 text-white font-bold flex items-center justify-center py-2 px-2 rounded ml-32"
                 >
                   Reservar
                 </Link>
