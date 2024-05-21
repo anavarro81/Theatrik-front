@@ -18,7 +18,7 @@ const Info = () => {
   return (
     <div className="min-h-screen ">
       <div className="parent p-2  rounded-lg mt-10 flex items-center justify-center inline-block max-w-screen-2xl m-auto flex-col md:flex-row">
-        <div className="left mb-18 m-auto pl-20 pr-18 flex-col w-3/4 sm:w-112 break-all">
+        <div className="left mb-18 m-auto pl-20 pr-20 flex-col w-3/4 sm:w-112 break-all">
           <h2 className="text-[32px]">
             <b>{play.title}</b>
           </h2>
