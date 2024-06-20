@@ -104,6 +104,23 @@ export function PlaysProvider({ children }) {
     setFilteredPlays([])
   }
 
+  const mesfinalAño = (mesLink) => {
+    const mesRecibido = parseInt(mesLink);
+    console.log("mesRecibido =>", mesRecibido);
+    let result = plays.filter((play) => {
+      let mes = new Date(play.date).getUTCMonth();
+
+      if (mesRecibido === mes) {
+        return play;
+      }
+    });
+    console.log(result);
+    setFilteredPlays(result);
+  }
+
+ 
+
+
   const datos = {
     plays: plays,
     getPlays: getPlays,
@@ -114,9 +131,9 @@ export function PlaysProvider({ children }) {
     searchPlayAsociation: searchPlayAsociation,
     multipleSearch: multipleSearch,
     getData: getData,
-    searchDate: searchDate,    
-    deleteFilters
-
+    searchDate: searchDate,
+    deleteFilters,
+    mesfinalAño,
   };
 
   

@@ -14,7 +14,7 @@ export default function FilterBar({/*plays*/}) {
   ;
   
   const handleGenre = (genre) => {
-    console.log("He recibido el genero del hijo: ", genre);
+    // console.log("He recibido el genero del hijo: ", genre);
 
     // const filterGenre = plays.filter(play => play.genre === genre)
     // console.log(filterGenre);
