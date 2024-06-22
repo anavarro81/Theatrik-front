@@ -21,6 +21,10 @@ export default function FilterBar({/*plays*/}) {
     searchPlay(genre)
   };
 
+  const handleFilterCompany = (company) => {
+    console.log('Filtrar por asociación ', event.target.value);
+  }
+
   const [activeFilter, setActiveFilter] = useState(null);
 
   /*1 explicación */
@@ -30,25 +34,45 @@ export default function FilterBar({/*plays*/}) {
 
   return (
     <>
-      <div className="flex">
-        <div className="bg-gray-200 hidden md:block">
-          <div className="h-full flex items-center mr-6">
-            <Links />
-          </div>
-        </div>
+      <div className="flex bg-gray-300 justify-center space-x-10 items-center">
 
-        <div>
-          <Text text="Borrar filtros"  variant={"deleteFilterLink"} id={"deleteFilterLink"}> </Text>
-          {/* //text, variant, type, url */}
-        </div>
+        
+          <Text text="Borrar filtros"  variant={"deleteFilterLink"} id={"deleteFilterLink"}> </Text>        
 
-        <div className="bg-gray-300 w-full flex justify-around md:justify-end ">
-          <div
+          {/* <div className="bg-gray-300 w-full flex justify-around md:justify-end "> */}
+          
+          {/* Filtro asociacion */}
+          
+          {/* <div
             className="md:mr-14"
             onClick={() => handleButtonClick("Association")}
           >
             <ButtonIconFilter icon={"Company"} text={"Asociación"} />
+          </div> */}
+
+          <div class="select-container mt-1 mb-1 flex mr-14 relative items-center">        
+            <select name="" id="" onChange={handleFilterCompany} class="select-box appearance-none w-[146px] p-3 rounded-lg">        
+              
+              <option value=""> Asociación </option>
+              <option value="Tkomún"> Tkomún </option>
+              <option value="Mayus atacados"> Mayus atacados </option>
+              <option value="ATMA"> ATMA </option>
+              <option value="Túngele"> Túngele </option>
+            
+            </select>
+            <div class="icon-container flex items-center absolute right-0">
+            <svg width="37" height="35" viewBox="0 0 37 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g id="layout-grid">
+              <path id="Vector" d="M13.6665 4.375H6.1665C5.33808 4.375 4.6665 5.02792 4.6665 5.83333V13.125C4.6665 13.9304 5.33808 14.5833 6.1665 14.5833H13.6665C14.4949 14.5833 15.1665 13.9304 15.1665 13.125V5.83333C15.1665 5.02792 14.4949 4.375 13.6665 4.375Z" stroke="#1F1F1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path id="Vector_2" d="M30.1665 4.375H22.6665C21.8381 4.375 21.1665 5.02792 21.1665 5.83333V13.125C21.1665 13.9304 21.8381 14.5833 22.6665 14.5833H30.1665C30.9949 14.5833 31.6665 13.9304 31.6665 13.125V5.83333C31.6665 5.02792 30.9949 4.375 30.1665 4.375Z" stroke="#1F1F1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path id="Vector_3" d="M30.1665 20.4167H22.6665C21.8381 20.4167 21.1665 21.0696 21.1665 21.875V29.1667C21.1665 29.9721 21.8381 30.625 22.6665 30.625H30.1665C30.9949 30.625 31.6665 29.9721 31.6665 29.1667V21.875C31.6665 21.0696 30.9949 20.4167 30.1665 20.4167Z" stroke="#1F1F1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path id="Vector_4" d="M13.6665 20.4167H6.1665C5.33808 20.4167 4.6665 21.0696 4.6665 21.875V29.1667C4.6665 29.9721 5.33808 30.625 6.1665 30.625H13.6665C14.4949 30.625 15.1665 29.9721 15.1665 29.1667V21.875C15.1665 21.0696 14.4949 20.4167 13.6665 20.4167Z" stroke="#1F1F1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+            </svg>
+            </div>          
           </div>
+
+          {/* Filtro Calendar */}
 
           <div
             className="md:mr-14"
@@ -57,32 +81,43 @@ export default function FilterBar({/*plays*/}) {
             <ButtonIconFilter icon={"Calendar"} text={"Calendario"} />
           </div>
 
-          <div className="md:mr-20" onClick={() => handleButtonClick("Gender")}>
+          {/* Filtro Genero */}
+
+          {/* <div className="md:mr-20" onClick={() => handleButtonClick("Gender")}>
             <ButtonIconFilter icon={"Genre"} text={"Género"} />
           </div>
-        </div>
-      </div>
+         */}
 
-      {/* div adicional para mostrar los filtros en movil con el condicional para que aparezca solo si se pulsa el botón*/}
+<div class="select-container mt-1 mb-1 flex mr-14 relative items-center">        
+            <select name="" id="" class="select-box appearance-none w-[146px] p-3 rounded-lg">        
+              <option value=""> Género </option>
+              <option value="Comedia"> Comedia </option>
+              <option value="Drama"> Drama </option>
+              <option value="Infantil"> Infantil </option>
+            </select>
+            <div class="icon-container flex items-center absolute right-0">
+            <svg width="37" height="35" viewBox="0 0 37 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g id="layout-grid">
+              <path id="Vector" d="M13.6665 4.375H6.1665C5.33808 4.375 4.6665 5.02792 4.6665 5.83333V13.125C4.6665 13.9304 5.33808 14.5833 6.1665 14.5833H13.6665C14.4949 14.5833 15.1665 13.9304 15.1665 13.125V5.83333C15.1665 5.02792 14.4949 4.375 13.6665 4.375Z" stroke="#1F1F1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path id="Vector_2" d="M30.1665 4.375H22.6665C21.8381 4.375 21.1665 5.02792 21.1665 5.83333V13.125C21.1665 13.9304 21.8381 14.5833 22.6665 14.5833H30.1665C30.9949 14.5833 31.6665 13.9304 31.6665 13.125V5.83333C31.6665 5.02792 30.9949 4.375 30.1665 4.375Z" stroke="#1F1F1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path id="Vector_3" d="M30.1665 20.4167H22.6665C21.8381 20.4167 21.1665 21.0696 21.1665 21.875V29.1667C21.1665 29.9721 21.8381 30.625 22.6665 30.625H30.1665C30.9949 30.625 31.6665 29.9721 31.6665 29.1667V21.875C31.6665 21.0696 30.9949 20.4167 30.1665 20.4167Z" stroke="#1F1F1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path id="Vector_4" d="M13.6665 20.4167H6.1665C5.33808 20.4167 4.6665 21.0696 4.6665 21.875V29.1667C4.6665 29.9721 5.33808 30.625 6.1665 30.625H13.6665C14.4949 30.625 15.1665 29.9721 15.1665 29.1667V21.875C15.1665 21.0696 14.4949 20.4167 13.6665 20.4167Z" stroke="#1F1F1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+            </svg>
+            </div>          
+          </div>
+        </div>
+
+          
+        {/* </div> */}
+    
       
-      {/*2 explicación*/}
-      <div
-        className={`bg-gray-300 mt-1 pt-2 pb-2 flex ${
-          activeFilter ? "block" : "hidden"
-        }`}
-      >
-        <div className="md:mr-14">
-          {activeFilter === "Association" && <AsociationFilter />}
-        </div>
 
-        <div className="md:mr-14">
-          {activeFilter === "Calendar" && <CalendarFilter />}
-        </div>
+      
 
-        <div className="md:mr-14">
-          {activeFilter === "Gender" && <GenderFilter genero={handleGenre}/>}
-        </div>
-      </div>
+      
+      
+      
     </>
   );
 }
