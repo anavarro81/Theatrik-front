@@ -11,7 +11,7 @@ export default function FilterBar({plays}) {
   const [endDate, setEndDate] = useState(null);
 
   const { searchPlayGenre, getPlays, searchPlayAsociation, searchDate} = usePlays();
- 
+
 
   const  handleGenre = (event) => {
     
@@ -49,6 +49,7 @@ export default function FilterBar({plays}) {
     setStartDate(start);
     setEndDate(end);
     searchDate(dates);
+    
   };
 
 
@@ -66,11 +67,15 @@ export default function FilterBar({plays}) {
             <select 
               name="company_name"
               id="" 
-              className="select-box appearance-none w-[146px] p-3 rounded-lg outline-none"
+              className="select-box appearance-none w-[146px] p-1 outline-none"
               onClick={handleCompany}
+
+              
 
             >
               {/* Obtiene los nombres de las asociaciones de la base de datos. */}
+              <option key={0} value=""> Asociacion </option> 
+              
               {plays.map((play) => (
                 <option key={play._id} value={play.company_name}> {play.company_name} </option>  
             ))             
@@ -78,14 +83,14 @@ export default function FilterBar({plays}) {
                       
             </select>
             <div className="icon-container flex items-center absolute right-0">
-            <svg width="37" height="35" viewBox="0 0 37 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+            {/* <svg width="16" height="16" viewBox="0 0 37 35" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g id="layout-grid">
               <path id="Vector" d="M13.6665 4.375H6.1665C5.33808 4.375 4.6665 5.02792 4.6665 5.83333V13.125C4.6665 13.9304 5.33808 14.5833 6.1665 14.5833H13.6665C14.4949 14.5833 15.1665 13.9304 15.1665 13.125V5.83333C15.1665 5.02792 14.4949 4.375 13.6665 4.375Z" stroke="#1F1F1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               <path id="Vector_2" d="M30.1665 4.375H22.6665C21.8381 4.375 21.1665 5.02792 21.1665 5.83333V13.125C21.1665 13.9304 21.8381 14.5833 22.6665 14.5833H30.1665C30.9949 14.5833 31.6665 13.9304 31.6665 13.125V5.83333C31.6665 5.02792 30.9949 4.375 30.1665 4.375Z" stroke="#1F1F1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               <path id="Vector_3" d="M30.1665 20.4167H22.6665C21.8381 20.4167 21.1665 21.0696 21.1665 21.875V29.1667C21.1665 29.9721 21.8381 30.625 22.6665 30.625H30.1665C30.9949 30.625 31.6665 29.9721 31.6665 29.1667V21.875C31.6665 21.0696 30.9949 20.4167 30.1665 20.4167Z" stroke="#1F1F1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               <path id="Vector_4" d="M13.6665 20.4167H6.1665C5.33808 20.4167 4.6665 21.0696 4.6665 21.875V29.1667C4.6665 29.9721 5.33808 30.625 6.1665 30.625H13.6665C14.4949 30.625 15.1665 29.9721 15.1665 29.1667V21.875C15.1665 21.0696 14.4949 20.4167 13.6665 20.4167Z" stroke="#1F1F1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </g>
-            </svg>
+            </svg> */}
             </div>          
           </div>
 
@@ -105,6 +110,9 @@ export default function FilterBar({plays}) {
       startDate={startDate}
       endDate={endDate}
       selectsRange
+      showIcon
+      toggleCalendarOnIconClick
+      
       
     />
       
@@ -115,21 +123,21 @@ export default function FilterBar({plays}) {
 
 {/* Filtro Genero */}
       <div className="select-container mt-1 mb-1 flex mr-14 relative items-center">        
-            <select name="genre"  onClick={handleGenre} class="select-box appearance-none w-[146px] p-3 rounded-lg outline-none">        
+            <select name="genre"  onClick={handleGenre} class="select-box appearance-none w-[146px] p-1 outline-none">        
               <option value=""> Género </option>
               <option value="comedia"> Comedia </option>
               <option value="drama"> Drama </option>
               <option value="infantil"> Infantil </option>
             </select>
             <div class="icon-container flex items-center absolute right-0">
-            <svg width="37" height="35" viewBox="0 0 37 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+            {/* <svg width="37" height="35" viewBox="0 0 37 35" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g id="layout-grid">
               <path id="Vector" d="M13.6665 4.375H6.1665C5.33808 4.375 4.6665 5.02792 4.6665 5.83333V13.125C4.6665 13.9304 5.33808 14.5833 6.1665 14.5833H13.6665C14.4949 14.5833 15.1665 13.9304 15.1665 13.125V5.83333C15.1665 5.02792 14.4949 4.375 13.6665 4.375Z" stroke="#1F1F1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               <path id="Vector_2" d="M30.1665 4.375H22.6665C21.8381 4.375 21.1665 5.02792 21.1665 5.83333V13.125C21.1665 13.9304 21.8381 14.5833 22.6665 14.5833H30.1665C30.9949 14.5833 31.6665 13.9304 31.6665 13.125V5.83333C31.6665 5.02792 30.9949 4.375 30.1665 4.375Z" stroke="#1F1F1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               <path id="Vector_3" d="M30.1665 20.4167H22.6665C21.8381 20.4167 21.1665 21.0696 21.1665 21.875V29.1667C21.1665 29.9721 21.8381 30.625 22.6665 30.625H30.1665C30.9949 30.625 31.6665 29.9721 31.6665 29.1667V21.875C31.6665 21.0696 30.9949 20.4167 30.1665 20.4167Z" stroke="#1F1F1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               <path id="Vector_4" d="M13.6665 20.4167H6.1665C5.33808 20.4167 4.6665 21.0696 4.6665 21.875V29.1667C4.6665 29.9721 5.33808 30.625 6.1665 30.625H13.6665C14.4949 30.625 15.1665 29.9721 15.1665 29.1667V21.875C15.1665 21.0696 14.4949 20.4167 13.6665 20.4167Z" stroke="#1F1F1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </g>
-            </svg>
+            </svg> */}
             </div>          
           </div>
         </div>
