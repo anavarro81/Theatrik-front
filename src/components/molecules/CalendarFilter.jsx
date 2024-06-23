@@ -4,7 +4,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { useState } from "react";
 import { usePlays } from "../../Providers/PlaysProvider";
 
-const CalendarFilter = () => {
+export default function CalendarFilter  () {
   const [startDate, setStartDate] = useState(new Date("2023-11-01"));
   const [endDate, setEndDate] = useState(null);
   const { searchDate } = usePlays()
@@ -27,4 +27,4 @@ const CalendarFilter = () => {
   );
 };
 
-export default CalendarFilter;
+

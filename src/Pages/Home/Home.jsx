@@ -19,13 +19,13 @@ const Home = () => {
 
   const playsGallery =  filteredPlays.length > 0 ? filteredPlays : plays
 
-
+  
 
   return (
     <>
       
       <HomeSlider data={sliderPlays}/>
-      <FilterBar/>
+      <FilterBar plays={plays}/>
       <PlayGallery plays={playsGallery}/>
 
     </>

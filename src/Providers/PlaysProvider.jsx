@@ -22,8 +22,9 @@ export function PlaysProvider({ children }) {
 
   const getData = () => {
     fetch("http://localhost:5002/play/getAllPlays")
-      .then((res) => res.json())
+      .then((res) =>  res.json() )
       .then((data) => {
+        
         setPlays(data);
         updateSlider(data);
       });
@@ -38,11 +39,21 @@ export function PlaysProvider({ children }) {
       return play[searchFor].includes(searchTerm);
     });
 
+    console.log('result >> ', result );
+
     setFilteredPlays(result);
   };
 
+  
+  /* Revisar 
+    Revisar si llegan bien los datos de busqueda por asociacion y se hace bien el filtrado.   
+  */ 
+
    const searchPlayAsociation = (searchParams) => {
-     const { searchTerm, searchFor } = searchParams;
+    
+    const { searchTerm, searchFor } = searchParams;
+
+    console.log('>> searchParams', searchParams); 
 
      // Filtrar las obras de teatro según el criterio de búsqueda y establecerlas en el estado de obras filtradas
      const result = plays.filter((play) => {
