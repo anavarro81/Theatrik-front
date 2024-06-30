@@ -1,11 +1,13 @@
 
-import React, { useState} from "react";
+import React, { useRef, useState} from "react";
 import Icon from '../../atoms/Icon/Icon'
 import "./styles.css"
 import DatePicker, { registerLocale } from "react-datepicker";
 
 import es from "date-fns/locale/es";
 registerLocale("es", es);
+
+
 
 
 
@@ -19,8 +21,8 @@ export default function FilterBarMobile({plays}) {
   const [startDate, setStartDate] = useState(new Date("2024-11-01"));
   const [endDate, setEndDate] = useState(null);
   const { searchPlayGenre, getPlays, searchPlayAsociation, searchDate} = usePlays();
-
-  
+  const [showFilters, setShowFilters] = useState(false)  
+  const toggleBtn = useRef();
   
   const handleCompany = (event) => {
     const searchParams = {
@@ -48,20 +50,29 @@ export default function FilterBarMobile({plays}) {
     searchPlayGenre(searchParams);
   }
 
+  
 
-
+  const toggleFilters = () => {
+    setShowFilters(!showFilters)
+    toggleBtn.current.classList.toggle("active")
+  }
 
   
   
   return (
 
     <> 
+
+    
     
     <div className='filter-bar-container'>   
 
-      <button> Filtros </button>
+      <button className='filter-toggle-btn' ref={toggleBtn} onClick={() => toggleFilters()}> Filtros </button>
 
-    
+       
+      
+      {showFilters && 
+      <> 
       <div className='filter-container' id='company-filter'>
       <label htmlFor="company_name" className="block text-gray-700 text-sm font-bold mb-2"> Asociación </label>
       <select
@@ -81,7 +92,7 @@ export default function FilterBarMobile({plays}) {
       </select>
       </div>
 
-      <div className="filter-container" id='date-filter' className="text-gray-700 text-sm font-bold mb-2">
+      <div className="filter-container text-gray-700 text-sm font-bold mb-2" id='date-filter'>
         <label htmlFor="calendar "> Fechas </label>        
         <DatePicker
               selected={startDate}
@@ -106,23 +117,19 @@ export default function FilterBarMobile({plays}) {
               <option value="infantil"> Infantil </option>
             </select>  
 
-      </div>
-
-      
-
-      
-      
-  
+      </div>          
       
 
     <div className='btn-container'>
       <button className=" px-4 py-2 rounded bg-orangeDesign"> Aplicar Filtros </button>
       <a href="" className='text-red-500 cursor-pointer'> Borrar Filtros</a>
     </div>
-
-    </div>
-
+    </>   
+    }
     
+    </div>
+ 
+            
     
     
     </>

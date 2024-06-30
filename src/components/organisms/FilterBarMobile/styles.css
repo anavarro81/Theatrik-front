@@ -16,11 +16,15 @@
 
 
 
-.filters-header:after {
+.filter-toggle-btn:after {
     content: '\2193';
     font-size: 18px;
     float: right;
     margin-left: 5px;
+}
+
+.active:after {
+    content: '\2191';
 }
 
 .filter-bar {
