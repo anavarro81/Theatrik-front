@@ -2,9 +2,10 @@ import React from 'react'
 import Input from '../../components/atoms/Input/Input';
 import Title from '../atoms/Title/Title';
 import { useForm } from 'react-hook-form';
+import Icon from "../atoms/Icon/Icon"
+import PlayInfoCard from '../molecules/PlayInfoCard';
 
-
-const BookingForm = () => {
+const BookingForm = ({play}) => {
 
   const {
     register,
@@ -29,10 +30,13 @@ const BookingForm = () => {
   return (
 <form onSubmit={handleSubmit(onSubmit)}>
 
-<div className='flex w-full space-y-4 md:flex flex-col md:w-[60%]'> 
+{/* Formulario */}
+<div className='flex w-full space-y-4 md:flex flex-col gap-[22px]'> 
+
+  
 
 <div className='relative'>  
-  <label className='absolute -top-3 left-2 bg-white' htmlFor="numTickets"> Numero de entradas (*) </label>
+  <label className='absolute -top-3 left-2 bg-white text-lg ' htmlFor="numTickets"> Numero de entradas (*) </label>
   <input 
   className="border p-3 w-full" 
   type="number" 
@@ -60,7 +64,7 @@ const BookingForm = () => {
 
 
 <div className='relative'>  
-  <label className='absolute -top-3 left-2 bg-white' htmlFor="fullName"> Nombre y apellido (*) </label>
+  <label className='absolute -top-3 left-2 bg-white text-lg' htmlFor="fullName"> Nombre y apellido (*) </label>
   <input 
   className="border p-3 w-full" 
   type="text" 
@@ -82,7 +86,7 @@ const BookingForm = () => {
 }
 
 <div className='relative'>  
-  <label className='absolute -top-3 left-2 bg-white' htmlFor="email"> Correo electrónico (*) </label>
+  <label className='absolute -top-3 left-2 bg-white text-lg' htmlFor="email"> Correo electrónico (*) </label>
   <input 
   className="border p-3 w-full" 
   type="email" 
@@ -103,7 +107,7 @@ const BookingForm = () => {
 }
 
 <div className='relative'>  
-  <label className='absolute -top-3 left-2 bg-white' htmlFor="phoneNumber"> Telefono </label>
+  <label className='absolute -top-3 left-2 bg-white text-lg' htmlFor="phoneNumber"> Telefono </label>
   <input 
   className="border p-3 w-full" 
   type="tel" 
@@ -121,9 +125,9 @@ const BookingForm = () => {
   <p className='text-red-500'> {errors.phoneNumber.message} </p>
 }
 
-
+{/* Comentarios */}
 <div className='relative'>  
-  <label className='absolute -top-3 left-2 bg-white' htmlFor="comments"> Comentarios </label>
+  <label className='absolute -top-3 left-2 bg-white text-lg' htmlFor="comments"> Comentarios </label>
   <input 
   className="border p-3 w-full" 
   type="text" 
@@ -143,9 +147,11 @@ const BookingForm = () => {
 
 
 
+{/* Reserva e info de fecha y lugar */}
 
+<PlayInfoCard/>
 
-<button type="submit"> Reservar </button>
+{/* Reserva e info de fecha y lugar FIN */}
 
 </div>
 
