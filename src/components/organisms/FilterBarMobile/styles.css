@@ -42,3 +42,10 @@
     display: flex;
     flex-direction: column;
 }
+
+.filter-container-dates {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
