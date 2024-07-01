@@ -5,6 +5,8 @@ import "./styles.css"
 import DatePicker, { registerLocale } from "react-datepicker";
 
 import es from "date-fns/locale/es";
+
+
 registerLocale("es", es);
 
 
@@ -18,8 +20,16 @@ import { usePlays } from "../../../Providers/PlaysProvider"
 
 export default function FilterBarMobile({plays}) {
 
-  const [startDate, setStartDate] = useState(new Date("2024-11-01"));
-  const [endDate, setEndDate] = useState(new Date("2024-11-31"));
+  const ExhibitonStart = new Date ('2024-11-01')
+  const ExhibitonEnds = new Date ('2024-11-30')
+  
+  
+  
+  
+
+  // const [startDate, setStartDate] = useState(new Date("2024-11-01"));
+  const [startDate, setStartDate] = useState(ExhibitonStart);
+  const [endDate, setEndDate] = useState(ExhibitonEnds);
 
   const { searchPlayGenre, getPlays, searchPlayAsociation, searchDate} = usePlays();
   const [showFilters, setShowFilters] = useState(false)  
@@ -106,12 +116,12 @@ export default function FilterBarMobile({plays}) {
       </div>
 
       {/* Filter by Date */ }
-      <p className="text-gray-700 text-sm font-bold"> Filtrar por fechas </p>
+      <p className="text-gray-700 text-sm font-bold"> Filtrar por fechas desde y hasta </p>
       <div className="filter-container-dates text-gray-700 text-sm font-bold mb-2" id='date-filter'>
       
-        <div className="filter-container"> 
+        {/* <div className="filter-container flex justify-center bg-red-500">  */}
           
-          <label htmlFor="calendar"> Desde </label>        
+          {/* <label htmlFor="calendar"> Desde </label>        
           
           <DatePicker
             selected={startDate}
@@ -119,21 +129,37 @@ export default function FilterBarMobile({plays}) {
             isClearable
             locale="es"
             placeholderText="dd/mm/aaaa"
+            dateFormat="dd/MM/yyyy"
             className="py-2 px-3"
-          />
-       </div>
+            
+          /> */}
 
-       <div className="filter-container">
+<DatePicker
+      selected={startDate}
+      onChange={onChange}
+      startDate={startDate}
+      endDate={endDate}
+      selectsRange
+      showIcon
+      toggleCalendarOnIconClick
+      locale='es'
+      dateFormat="dd/MM/yyyy"
+      
+    />
+       {/* </div> */}
+
+       {/* <div className="filter-container">
           <label htmlFor="calendar"> Hasta </label>              
           <DatePicker
-              selected={startDate}
+              selected={endDate}
               onChange={(date) => setEndDate(date)}
               isClearable
               locale="es"
               placeholderText="dd/mm/aaaa"
+              dateFormat="dd/MM/yyyy"
               className="py-2 px-3"
             />   
-        </div>   
+        </div>    */}
       
       </div>
 
