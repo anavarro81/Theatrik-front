@@ -20,8 +20,8 @@ import { usePlays } from "../../../Providers/PlaysProvider"
 
 export default function FilterBarMobile({plays}) {
 
-  const ExhibitonStart = new Date ('2024-11-01')
-  const ExhibitonEnds = new Date ('2024-11-30')
+  const ExhibitonStart = new Date ('2023-11-01')
+  const ExhibitonEnds = new Date ('2023-11-30')
   
   
   
