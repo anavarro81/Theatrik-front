@@ -1,11 +1,15 @@
 
-import React, { useState} from "react";
+import React, { useRef, useState} from "react";
 import Icon from '../../atoms/Icon/Icon'
 import "./styles.css"
 import DatePicker, { registerLocale } from "react-datepicker";
 
 import es from "date-fns/locale/es";
+
+
 registerLocale("es", es);
+
+
 
 
 
@@ -16,11 +20,20 @@ import { usePlays } from "../../../Providers/PlaysProvider"
 
 export default function FilterBarMobile({plays}) {
 
-  const [startDate, setStartDate] = useState(new Date("2024-11-01"));
-  const [endDate, setEndDate] = useState(null);
-  const { searchPlayGenre, getPlays, searchPlayAsociation, searchDate} = usePlays();
-
+  const ExhibitonStart = new Date ('2024-11-01')
+  const ExhibitonEnds = new Date ('2024-11-30')
   
+  
+  
+  
+
+  // const [startDate, setStartDate] = useState(new Date("2024-11-01"));
+  const [startDate, setStartDate] = useState(ExhibitonStart);
+  const [endDate, setEndDate] = useState(ExhibitonEnds);
+
+  const { searchPlayGenre, getPlays, searchPlayAsociation, searchDate} = usePlays();
+  const [showFilters, setShowFilters] = useState(false)  
+  const toggleBtn = useRef();
   
   const handleCompany = (event) => {
     const searchParams = {
@@ -48,22 +61,41 @@ export default function FilterBarMobile({plays}) {
     searchPlayGenre(searchParams);
   }
 
+  
 
+  const toggleFilters = () => {
+    setShowFilters(!showFilters)
+    toggleBtn.current.classList.toggle("active")
+  }
 
+  const handleFilters = () => {
+
+  }
 
   
   
   return (
 
     <> 
+
+    
     
     <div className='filter-bar-container'>   
 
-      <button> Filtros </button>
+      <button className='filter-toggle-btn' ref={toggleBtn} onClick={() => toggleFilters()}> Filtros </button>
 
-    
+       
+      
+      {showFilters && 
+      <>
+      
+      <p> Seleccion una de las opciones para filtrar las obras: </p>  
+
       <div className='filter-container' id='company-filter'>
-      <label htmlFor="company_name" className="block text-gray-700 text-sm font-bold mb-2"> Asociación </label>
+      <label htmlFor="company_name" className="block text-gray-700 text-sm font-bold mb-2"> Firtrar por Asociación </label>
+      
+      {/* Filter by Company */ }
+
       <select
               name="company_name"
               id=""
@@ -71,7 +103,9 @@ export default function FilterBarMobile({plays}) {
               onClick={handleCompany}
             >
               {/* Obtiene los nombres de las asociaciones de la base de datos. */}
-              <option key={0} value=""> Asociacion </option>
+              
+
+              <option key={0} value={""}>- Cualquiera</option>
 
               {plays.map((play) => (
                 <option key={play._id} value={play.company_name}> {play.company_name} </option>
@@ -81,48 +115,76 @@ export default function FilterBarMobile({plays}) {
       </select>
       </div>
 
-      <div className="filter-container" id='date-filter' className="text-gray-700 text-sm font-bold mb-2">
-        <label htmlFor="calendar "> Fechas </label>        
-        <DatePicker
-              selected={startDate}
-              onChange={onChange}
-              startDate={startDate}
-              endDate={endDate}
+      {/* Filter by Date */ }
+      <p className="text-gray-700 text-sm font-bold"> Filtrar por fechas desde y hasta </p>
+      <div className="filter-container-dates text-gray-700 text-sm font-bold mb-2" id='date-filter'>
+      
+        {/* <div className="filter-container flex justify-center bg-red-500">  */}
+          
+          {/* <label htmlFor="calendar"> Desde </label>        
+          
+          <DatePicker
+            selected={startDate}
+            onChange={(date) => setStartDate(date)}
+            isClearable
+            locale="es"
+            placeholderText="dd/mm/aaaa"
+            dateFormat="dd/MM/yyyy"
+            className="py-2 px-3"
+            
+          /> */}
+
+<DatePicker
+      selected={startDate}
+      onChange={onChange}
+      startDate={startDate}
+      endDate={endDate}
+      selectsRange
+      showIcon
+      toggleCalendarOnIconClick
+      locale='es'
+      dateFormat="dd/MM/yyyy"
+      
+    />
+       {/* </div> */}
+
+       {/* <div className="filter-container">
+          <label htmlFor="calendar"> Hasta </label>              
+          <DatePicker
+              selected={endDate}
+              onChange={(date) => setEndDate(date)}
+              isClearable
               locale="es"
-              selectsRange
-              showIcon
-              toggleCalendarOnIconClick
+              placeholderText="dd/mm/aaaa"
+              dateFormat="dd/MM/yyyy"
               className="py-2 px-3"
-        />
-      </div> 
+            />   
+        </div>    */}
+      
+      </div>
+
+
+      {/* Filter by Genre */ }
       <div className="filter-container">
-      <label htmlFor="genre" className="block text-gray-700 text-sm font-bold mb-2"> Genero </label>
+      <label htmlFor="genre" className="block text-gray-700 text-sm font-bold mb-2"> Filtrar por  Genero </label>
         <select name="genre" 
         onClick={handleGenre} 
         className="py-2 px-3">
-              <option value=""> Género </option>
+              <option value="">- Cualquiera</option>
               <option value="comedia"> Comedia </option>
               <option value="drama"> Drama </option>
               <option value="infantil"> Infantil </option>
             </select>  
 
-      </div>
-
-      
-
+      </div>       
       
       
-  
-      
-
-    <div className='btn-container'>
-      <button className=" px-4 py-2 rounded bg-orangeDesign"> Aplicar Filtros </button>
-      <a href="" className='text-red-500 cursor-pointer'> Borrar Filtros</a>
-    </div>
-
-    </div>
-
+    </>   
+    }
     
+    </div>
+ 
+            
     
     
     </>

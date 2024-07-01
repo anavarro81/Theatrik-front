@@ -11,16 +11,14 @@ import FilterBarDesktop from "../organisms/FilterBarDesktop"
 
 export default function FilterBar({plays}) {
 
-
-
   const screenSize = useScreenSize();
 
-
-  return (
-
+  return (    
+    <>   
     
-    <>
-      {screenSize.width <= 640 ? <FilterBarMobile plays={plays}/> : <FilterBarDesktop plays={plays}/> }
+      {screenSize.width <= 640 ? 
+      <FilterBarMobile plays={plays}/> 
+      : <FilterBarDesktop plays={plays}/> }
     </>
   );
 }
