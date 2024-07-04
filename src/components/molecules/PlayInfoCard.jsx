@@ -1,41 +1,43 @@
 import React from 'react'
 import Icon from "../atoms/Icon/Icon"
+import { Link } from "react-router-dom";
 
-const PlayInfoCard = () => {
+const PlayInfoCard = ({play}) => {
   return (
-    <div className=' p-[25px] mx-5 border rounded-lg border-stone-900 flex-col justify-center items-center gap-2.5'>
-        <div className='flex flex-col gap-2'> 
-            {/* Ubicacion */}
-                <div className=' justify-start items-start gap-[15px] flex'>
-                <div className='w-[30px] h-[30px] relative'> <Icon type={"Map"}/> </div>
-                <div className=" text-stone-900 text-xl font-bold"> Auditorio Paco de Lucía, Centro de Arte Alcobendas</div> 
-        </div>
-{/* Fecha */}  
-  <div className='justify-start intems-start gap-[15px] flex'>
-    <div className='w-[30px] h-[30px] relative'> <Icon type={"Calendar_Yellow"}/> </div>
-    <div className="text-stone-900 text-xl font-bold">Viernes 3 de noviembre</div>
-  </div>
 
-{/* Hora */}
-    
-    <div className='flex flex-col'>
-      <div className="flex gap-[15px] ">
-        <div className='w-[30px] h-[30px] relative '> <Icon type={"Clock"}></Icon></div>
-        <div className=" text-lg text-stone-900 font-bold md:text-xl">20:00h</div>
-      </div>
-      <div className='flex justify-end '>
-        <button className=' w-full mt-2 py-2 md:w-[174px] text-center rounded-lg text-stone-900 font-["Cabinet Grotesk"] font-bold text-[28px] bg-orangeDesign'> Reservar </button>
-      </div>
+<div className=" w-[95%] lg:w-full "> 
+        
+        <div id='placeInfo' className='mt-4 border p-4 rounded-lg shadow-lg '>
+              
+              {/* Place */ }
+              <div id='place' className='flex items-center space-x-2 '>
+                <Icon type={"Map"}/>
+                <p> {play.place} </p>
+              </div>
 
-    </div>
+              {/* Date */}
+              <div className='flex items-center space-x-2 my-2 '>
+                <Icon type={"Calendar_Yellow"}/>
+                <p> {play.date.substring(0, 10)} </p>
+              </div>
 
-</div>
+              {/* Time and booking button */ }
+              <div className='w-full items-center lg:flex lg:justify-between space-x-2 '>
+                <Icon type={"Clock"}/>
+                <p> {play.time} </p>          
+                <div className='mt-2  w-full lg:flex lg:justify-end'>
+                <Link to={`/booking/${play._id}`}> 
+                  <button className='bg-orangeDesign  text-white font-bold py-2 px-4 rounded-full inline-block h-[42px] w-full'> Reservar </button>
+                </Link>
+              </div>      
+          </div>
 
-</div>
-
-
+        </div> 
+      
+      </div>  
 
   )
 }
 
 export default PlayInfoCard
+
