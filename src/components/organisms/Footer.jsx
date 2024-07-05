@@ -8,7 +8,7 @@ const Footer = () => {
 //       Copyright &#169; 2024 | Creado por...{" "}
 
     // <div className="relative bottom-0 relative bottom-0 bg-black text-white h-12 w-full flex justify-end items-center px-2 z-10">
-      <div className="bottom-0 left-0 bg-black w-full text-white h-12 justify-end flex px-2 py-[10px] z-10 mt-[10px] ">
+      <div className=" bg-black w-full text-white h-12 justify-end flex px-2 py-[10px] z-10 mt-[10px] ">
       Copyright &#169; 2024 | Creado por...
     </div>
     

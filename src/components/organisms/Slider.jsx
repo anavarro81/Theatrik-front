@@ -6,7 +6,7 @@ import SliderText from "../molecules/Slider/SliderText";
 import Image from "../atoms/Image/Image";
 import BookingBtn from "../atoms/Button/BookingBtn";
 import { Link } from "react-router-dom";
-
+import '../../css/main.css'
 
 
 const HomeSlider = ({data}) => {
@@ -32,13 +32,13 @@ const HomeSlider = ({data}) => {
                 pagination={pagination}
                 className="bg-blackDesign"
             >
-            <div className="swiper-wrapper">
+            <div className="swiper-wrapper ">
             {data?.map((item) => 
-                <SwiperSlide className="grid grid-cols-1 mb-6 md:grid-cols-2" key={item._id} >
-                    <div className="md:max-w-md md:col-start-2 md:mx-auto md:my-6" >
+                <SwiperSlide className="grid grid-cols-1 mb-6 md:grid-cols-2 " key={item._id} >
+                    <div id='swiperSlide' className="md:max-w-md md:col-start-2 md:mx-auto md:my-6 "  >
                     <Image url={item.cartel} alt={item.title} variant={"rounded"}/>
                     </div>
-                    <div className="px-4 py-4 grid grid-cols-1 gap-4 md:gap-8 md:row-start-1 md:ml-32 md:my-auto">
+                    <div className="px-4 py-4 grid grid-cols-1 gap-4 md:gap-8 md:row-start-1 md:ml-32 md:my-auto ">
                         <div>   
                             <SliderText data={item}/>
                         </div>
