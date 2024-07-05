@@ -1,8 +1,14 @@
 import React from 'react'
 import Icon from "../atoms/Icon/Icon"
 import { Link } from "react-router-dom";
+import { formatDate } from '../../../utils/formatDate'
 
 const PlayInfoCard = ({play}) => {
+
+  // Formatea fecha a formato: viernes, 3 de noviembre"
+  const formatedDate = formatDate(play.date);
+  console.log(formatedDate);
+
   return (
 
 <div className=" w-[95%] lg:w-full "> 
@@ -18,7 +24,7 @@ const PlayInfoCard = ({play}) => {
               {/* Date */}
               <div className='flex items-center space-x-2 my-2 '>
                 <Icon type={"Calendar_Yellow"}/>
-                <p> {play.date.substring(0, 10)} </p>
+                <p> {formatedDate} </p>
               </div>
 
               {/* Time and booking button */ }
