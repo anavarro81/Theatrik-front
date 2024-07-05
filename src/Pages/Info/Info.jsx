@@ -69,7 +69,7 @@ const Info = () => {
               </div>
 
               {/* Time and booking button */ }
-              <div className='w-full items-center lg:flex lg:justify-between space-x-2 '>
+              <div className='w-full items-center lg:flex lg:justify-between space-x-2'>
                 <Icon type={"Clock"}/>
                 <p> {play.time} </p>          
                 <div className='mt-2  w-full lg:flex lg:justify-end'>
