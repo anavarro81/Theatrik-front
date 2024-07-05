@@ -3,7 +3,7 @@ import Icon from "../atoms/Icon/Icon"
 import { Link } from "react-router-dom";
 import { formatDate } from '../../../utils/formatDate'
 
-const PlayInfoCard = ({play}) => {
+const PlayInfoCard = ({play, onSubmit}) => {
 
   // Formatea fecha a formato: viernes, 3 de noviembre"
   const formatedDate = formatDate(play.date);
@@ -36,27 +36,18 @@ const PlayInfoCard = ({play}) => {
                   </div>
 
                   <Link to={`/booking/${play._id}`}> 
-                  <button className='bg-orangeDesign  text-white font-bold py-2 px-4 rounded-full inline-block h-[42px] w-full'> Reservar </button>
+                  <button 
+                  type='submit'
+                  className='bg-orangeDesign  text-white font-bold py-2 px-4 rounded-full inline-block h-[42px] w-full'
+                  onClick={onSubmit}
+                  > 
+                  Reservar 
+                  
+                  </button>
                   </Link>
-
-
-              </div>
-
-              {/* <div className='block lg:hidden'>
-                <Link to={`/booking/${play._id}`}> 
-                  <button className='bg-orangeDesign  text-white font-bold py-2 px-4 rounded-full inline-block h-[42px] w-full'> Reservar </button>
-                </Link>
-              </div> */}
-
-              
-
-              {/* <div className='w-full items-center flex flex-col lg:justify-between space-x-2 '> */}
-
-
-
-        </div> 
-      
-      </div>  
+              </div>            
+        </div>       
+</div>  
 
   )
 }

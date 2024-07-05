@@ -5,8 +5,11 @@ import { useForm } from 'react-hook-form';
 import Icon from "../atoms/Icon/Icon"
 import PlayInfoCard from '../molecules/PlayInfoCard';
 import { Link } from 'react-router-dom';
+import { formatDate } from '../../../utils/formatDate'
 
 const BookingForm = ({play}) => {
+
+  const formatedDate = formatDate(play.date);
 
   const {
     register,
@@ -160,10 +163,52 @@ const BookingForm = ({play}) => {
 
 
 {/* Reserva e info de fecha y lugar */}
-  <div className='flex justify-end'>
-  <PlayInfoCard play={play}/>
-  </div>
+  {/* <div className='flex justify-end'>
+  <PlayInfoCard play={play} onSubmit={onSubmit}/>
+  </div> */}
+
+<div className=" w-[95%] lg:w-full "> 
+        
+        <div id='placeInfo' className='mt-4 border p-4 rounded-lg shadow-lg '>
+              
+              {/* Place */ }
+              <div id='place' className='flex items-center space-x-2 '>
+                <Icon type={"Map"}/>
+                <p> {play.place} </p>
+              </div>
+
+              {/* Date */}
+              <div className='flex items-center space-x-2 my-2 '>
+                <Icon type={"Calendar_Yellow"}/>
+                <p> {formatedDate} </p>
+              </div>
+
+              {/* Time and booking button */ }
+              <div className='flex flex-col lg:flex-row lg:justify-between '>
+                  
+                  <div className='flex items-center space-x-2 my-2 '>
+                    <Icon type={"Clock"}/>
+                    <p> {play.time} </p>
+                  </div>
+
+                  
+                  <button 
+                  type='submit'
+                  className='bg-orangeDesign  text-white font-bold py-2 px-4 rounded-full inline-block h-[42px] w-full'
+                  
+                  > 
+                  Reservasssr 
+                  
+                  </button>
+                  
+              </div>            
+        </div>       
+</div>  
+
 {/* Reserva e info de fecha y lugar FIN */}
+
+
+
 
 </div>
 
