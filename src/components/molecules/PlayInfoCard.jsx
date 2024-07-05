@@ -28,15 +28,31 @@ const PlayInfoCard = ({play}) => {
               </div>
 
               {/* Time and booking button */ }
-              <div className='w-full items-center lg:flex lg:justify-between space-x-2 '>
-                <Icon type={"Clock"}/>
-                <p> {play.time} </p>          
-                <div className='mt-2  w-full lg:flex lg:justify-end'>
+              <div className='flex flex-col lg:flex-row lg:justify-between '>
+                  
+                  <div className='flex items-center space-x-2 my-2 '>
+                    <Icon type={"Clock"}/>
+                    <p> {play.time} </p>
+                  </div>
+
+                  <Link to={`/booking/${play._id}`}> 
+                  <button className='bg-orangeDesign  text-white font-bold py-2 px-4 rounded-full inline-block h-[42px] w-full'> Reservar </button>
+                  </Link>
+
+
+              </div>
+
+              {/* <div className='block lg:hidden'>
                 <Link to={`/booking/${play._id}`}> 
                   <button className='bg-orangeDesign  text-white font-bold py-2 px-4 rounded-full inline-block h-[42px] w-full'> Reservar </button>
                 </Link>
-              </div>      
-          </div>
+              </div> */}
+
+              
+
+              {/* <div className='w-full items-center flex flex-col lg:justify-between space-x-2 '> */}
+
+
 
         </div> 
       
@@ -47,3 +63,17 @@ const PlayInfoCard = ({play}) => {
 
 export default PlayInfoCard
 
+{/* <div className='w-full items-center flex flex-col lg:justify-between space-x-2 '>
+                
+<div id='icon-info-clock' className='flex items-center space-x-2 my-2 '>
+    <Icon type={"Clock"}/>
+    <p> {play.time} </p>
+</div>
+
+  <div className='mt-2  w-full lg:flex lg:justify-end'>
+    <Link to={`/booking/${play._id}`}> 
+      <button className='bg-orangeDesign  text-white font-bold py-2 px-4 rounded-full inline-block h-[42px] w-full'> Reservar </button>
+    </Link>
+  </div>      
+
+</div> */}
