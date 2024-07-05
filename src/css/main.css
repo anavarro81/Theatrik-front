@@ -29,9 +29,9 @@
   background-color: transparent;
 }
 
-/* .main {
+.main {
   min-height: calc(100vh - 50px)
-} */
+}
 
 .swiper-slide {
   flex-shrink: 0;

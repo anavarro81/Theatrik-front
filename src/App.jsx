@@ -52,10 +52,11 @@ const router = createBrowserRouter([
 const App = () => {
   return (
     <>
-      
+        <div class='main'> 
         <PlaysProvider>
         <RouterProvider router={router} />
         </PlaysProvider>      
+        </div>
       
     </>
   );
