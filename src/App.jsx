@@ -17,6 +17,7 @@ console.log('import.meta.env.MODE ', import.meta.env.MODE);
 
 if (import.meta.env.MODE == 'production') {
   url_base = 'https://theatrik.vercel.app'
+
   console.log('url_base >  ', url_base);
 
 }
