@@ -18,6 +18,8 @@ console.log('import.meta.env.MODE ', import.meta.env.MODE);
 if (import.meta.env.MODE == 'production') {
   url_base = 'https://theatrik.vercel.app'
 
+  console.log('url_base >  ', url_base);
+
 }
 
 const router = createBrowserRouter([
@@ -30,9 +32,11 @@ const router = createBrowserRouter([
         index: true,
         element: <Home />,
         loader: async () => {
-
+          console.log('url_base en el fetch = ', url_base);
           // return fetch("http://localhost:5002/play/getAllPlays");
-          return fetch(`${url_base}/play/getAllPlays`);
+          // return fetch(`${url_base}/play/getAllPlays`);
+          return fetch("https://theatrik.vercel.app/play/getAllPlays");
+          
         },
       },
 
