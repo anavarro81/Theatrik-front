@@ -15,7 +15,7 @@ let url_base = "http://localhost:5002"
 console.log('import.meta.env.MODE ', import.meta.env.MODE);
 
 if (import.meta.env.MODE == 'production') {
-  url_base = 'https://theatrik.vercel.app/'
+  url_base = 'https://theatrik.vercel.app'
 
 }
 
