@@ -18,7 +18,7 @@ export function PlaysProvider({ children }) {
     let url_base = "http://localhost:5002"
 
     if (import.meta.env.MODE == 'production') {
-      url_base = 'https://theatrik.vercel.app/'
+      url_base = 'https://theatrik.vercel.app'
     }
   
     // fetch("http://localhost:5002/play/getAllPlays")
@@ -35,20 +35,27 @@ export function PlaysProvider({ children }) {
     let url_base = "http://localhost:5002"
 
     if (import.meta.env.MODE == 'production') {
-      url_base = 'https://theatrik.vercel.app/'
+      url_base = 'https://theatrik.vercel.app'
     }
   
     // fetch("http://localhost:5002/play/getAllPlays")
 
-
-
-    fetch(`${url_base}/play/getAllPlays`)
+    console.log('Estoy en PlayProviders..');
+    
+    try {
+      fetch(`${url_base}/play/getAllPlays`)
       .then((res) =>  res.json() )
       .then((data) => {
         
         setPlays(data);
         updateSlider(data);
       });
+      
+    } catch (error) {
+        console.log('error en el fetch...', error);
+    }
+
+    
   };
 
   // Función para buscar obras de teatro según un término y un criterio de búsqueda
