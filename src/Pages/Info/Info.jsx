@@ -11,7 +11,10 @@ import Icon from "../../components/atoms/Icon/Icon"
 import "./styles.css";
 
 const Info = () => {
+  
   const play = useLoaderData();
+
+  console.log('Estoy en info... ', play );
   
 
   const h2 = "text-[20px] mb-px ml-1";
