@@ -58,10 +58,15 @@ const router = createBrowserRouter([
         //   //return fetch(`http://localhost:5002/play/getPlay/${params.id}`);
         //   return fetch(`${url_base}/play/getPlay/${params.id}`);
 
+        
+
+        
 
         // },
 
         loader: async ({params})=> {
+
+          console.log(`Estoy en info Url base ${url_base}  params.id ${params.id} ` )
     
           const resp = await fetch(`${url_base}/play/getPlay/${params.id}`)
           
