@@ -54,7 +54,7 @@ const router = createBrowserRouter([
         path: "/info/:id",
         element: <Info />,
         loader: ({ params }) => {
-
+          console.log('info: ', `${url_base}/play/getPlay/${params.id}`);
           //return fetch(`http://localhost:5002/play/getPlay/${params.id}`);
           return fetch(`${url_base}/play/getPlay/${params.id}`);
 
