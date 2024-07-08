@@ -64,7 +64,14 @@ const router = createBrowserRouter([
         loader: async ({params})=> {
     
           const resp = await fetch(`${url_base}/play/getPlay/${params.id}`)
+          
+          console.log('resp ', resp);  
+
+
           const plays = await resp.json()
+
+          console.log('plays > ', plays);
+
           return plays    
           
         },
