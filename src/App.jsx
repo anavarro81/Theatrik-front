@@ -53,13 +53,23 @@ const router = createBrowserRouter([
       {
         path: "/info/:id",
         element: <Info />,
-        loader: ({ params }) => {
-          console.log('info: ', `${url_base}/play/getPlay/${params.id}`);
-          //return fetch(`http://localhost:5002/play/getPlay/${params.id}`);
-          return fetch(`${url_base}/play/getPlay/${params.id}`);
+        
+        // loader: ({ params }) => {          
+        //   //return fetch(`http://localhost:5002/play/getPlay/${params.id}`);
+        //   return fetch(`${url_base}/play/getPlay/${params.id}`);
 
 
+        // },
+
+        loader: async ({params})=> {
+    
+          const resp = await fetch(`${url_base}/play/getPlay/${params.id}`)
+          const plays = await resp.json()
+          return plays    
+          
         },
+
+
       },
 
       {
