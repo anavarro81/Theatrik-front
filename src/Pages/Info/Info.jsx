@@ -8,7 +8,7 @@ import MapIcon from "../../components/atoms/Icon/map.svg";
 import CalendarDateIcon from "../../components/atoms/Icon/calendar-date.svg";
 import ClockIcon from "../../components/atoms/Icon/clock.svg";
 import Icon from "../../components/atoms/Icon/Icon"
-import "./styles.css";
+// import "./styles.css";
 
 const Info = () => {
   
