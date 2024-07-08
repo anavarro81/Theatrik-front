@@ -13,7 +13,16 @@ export function PlaysProvider({ children }) {
 
   // Función para obtener todas las obras de teatro desde el servidor
   const getPlays = () => {
-    fetch("http://localhost:5002/play/getAllPlays")
+
+    
+    let url_base = "http://localhost:5002"
+
+    if (import.meta.env.MODE == 'production') {
+      url_base = 'https://theatrik.vercel.app/'
+    }
+  
+    // fetch("http://localhost:5002/play/getAllPlays")
+      fetch(`${url_base}/play/getAllPlays`)
       .then((res) => res.json())
       .then((data) => {
         setPlays(data);
@@ -21,7 +30,19 @@ export function PlaysProvider({ children }) {
   };
 
   const getData = () => {
-    fetch("http://localhost:5002/play/getAllPlays")
+
+    
+    let url_base = "http://localhost:5002"
+
+    if (import.meta.env.MODE == 'production') {
+      url_base = 'https://theatrik.vercel.app/'
+    }
+  
+    // fetch("http://localhost:5002/play/getAllPlays")
+
+
+
+    fetch(`${url_base}/play/getAllPlays`)
       .then((res) =>  res.json() )
       .then((data) => {
         
