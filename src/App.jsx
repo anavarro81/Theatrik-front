@@ -33,7 +33,9 @@ const router = createBrowserRouter([
         loader: async () => {
           console.log('url_base en el fetch = ', url_base);
           // return fetch("http://localhost:5002/play/getAllPlays");
-          return fetch(`${url_base}/play/getAllPlays`);
+          // return fetch(`${url_base}/play/getAllPlays`);
+          return fetch("https://theatrik.vercel.app/play/getAllPlays");
+          
         },
       },
 
