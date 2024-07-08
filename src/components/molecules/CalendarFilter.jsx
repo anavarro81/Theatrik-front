@@ -2,28 +2,29 @@ import React from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useState } from "react";
-import { Listbox } from "@headlessui/react";
+import { usePlays } from "../../Providers/PlaysProvider";
 
-// import Icon from '../atoms/Icon/Icon'
+export default function CalendarFilter  () {
+  const [startDate, setStartDate] = useState(new Date("2023-11-01"));
+  const [endDate, setEndDate] = useState(null);
+  const { searchDate } = usePlays()
 
-const CalendarFilter = () => {
-  const [startDate, setStartDate] = useState(new Date());
-
+  const onChange = (dates) => {
+    const [start, end] = dates;
+    setStartDate(start);
+    setEndDate(end);
+    searchDate(dates);
+  };
   return (
-    <div>
-      <p className="font-medium leading-6 text-slate-500 h-[0rem] flex items-center justify-center">
-        Calendario
-      </p>
-      <div className="h-[60px]">
-        <DatePicker
-          className="rounded w-[7rem] h-[26px] border border-gray-300"
-          showIcon
-          selected={startDate}
-          onChange={(date) => setStartDate(date)}
-        />
-      </div>
-    </div>
+    <DatePicker
+      selected={startDate}
+      onChange={onChange}
+      startDate={startDate}
+      endDate={endDate}
+      selectsRange
+      inline
+    />
   );
 };
 
-export default CalendarFilter;
+

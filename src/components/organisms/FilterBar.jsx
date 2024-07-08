@@ -1,20 +1,26 @@
-import AsociationFilter from "../molecules/AsociationFilter";
-import Links from "../molecules/Links";
-import CalendarFilter from "../molecules/CalendarFilter";
-import GenderFilter from "../molecules/GenderFilter";
+import React, { useState, useEffect } from "react";
+import Text from "../atoms/Text/Text";
+import { usePlays } from "../../Providers/PlaysProvider";
+import DatePicker, { CalendarContainer } from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import CalendarFilter from '../molecules/CalendarFilter'
+import useScreenSize from "../../../hooks/useScreenSize"
+import FilterBarMobile from "../organisms/FilterBarMobile/FilterBarMobile"
+import FilterBarDesktop from "../organisms/FilterBarDesktop"
 
-export default function FilterBar() {
-  
-  return (
-    <div className="grid grid-rows-1">
-      <div className="bg-gray-200">
-        <Links />
-      </div>
-      <div className="bg-gray-300 flex justify-around ">
-        <AsociationFilter />
-        <CalendarFilter />
-        <GenderFilter />
-      </div>
-    </div>
+
+export default function FilterBar({plays}) {
+
+  const screenSize = useScreenSize();
+
+  return (    
+    <>   
+    
+      {screenSize.width <= 640 ? 
+      <FilterBarMobile plays={plays}/> 
+      : <FilterBarDesktop plays={plays}/> }
+    </>
   );
 }
+
+

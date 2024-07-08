@@ -10,22 +10,37 @@
     @apply rounded-lg text-sm px-10 py-2.5 cursor-pointer
 }
 
-.filterBar {
-    @apply flex
-    shadow-md
-    overflow-hidden
-    md:flex-shrink-0
-    font-semibold
-    m-0 /*aplica margin 0 */
-    justify-between
-}
-
 .hidden.md\:inline-block {
   display: inline-block !important;
 }
 
 .block.md\:hidden {
   display: none !important;
+}
+
+.custom-pagination-bullet {
+  margin-inline: 18px;
+  color: lightslategray;
+  cursor: pointer;
+}
+
+.swiper-pagination-bullet-active {
+  color: white;
+  background-color: transparent;
+}
+
+.main {
+  min-height: calc(100vh - 50px)
+}
+
+.swiper-slide {
+  flex-shrink: 0;
+  /* width: 100%; */
+  height: 100%;
+  position: relative;
+  transition-property: transform;
+  display: grid !important;
+  
 }
 
 @tailwind utilities;

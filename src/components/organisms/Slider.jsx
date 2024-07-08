@@ -1,24 +1,56 @@
-import React from "react";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination } from "swiper/modules";
+import 'swiper/css';
+import 'swiper/css/pagination';
 import SliderText from "../molecules/Slider/SliderText";
 import Image from "../atoms/Image/Image";
-import SliderPagination from "../molecules/Slider/SliderPagination";
+import BookingBtn from "../atoms/Button/BookingBtn";
+import { Link } from "react-router-dom";
+import '../../css/main.css'
 
-const Slider = () => {
+
+const HomeSlider = ({data}) => {
+
+    const pagination = {
+        clickable: true,
+        renderBullet: function (index, className) {
+          return '<span class="' + className + '">●</span>';
+        },
+        bulletClass: "custom-pagination-bullet",
+      };
+    
+
     return (
-        <>
-            <div className="bg-blackDesign grid grid-cols-1 md:grid-cols-2">
-                <div className="md:max-w-md md:col-start-2 md:mx-auto md:my-8">
-                    <Image url={"https://www.blog.thelittleprince.com/wp-content/uploads/2015/05/affiche-def-du-film.jpg"} alt={"imagen_obra"} variant={"rounded"}/>
-                </div>
-                <div className="px-2 py-4 md:row-start-1 md:m-auto">
-                    <SliderText/>
-                    <div>
-                        <SliderPagination/>
+        <>  
+            <Swiper
+                autoplay={{
+                    delay: 5000,
+                }} 
+                speed={2000}
+                loop={true} 
+                modules={[Autoplay, Pagination]}
+                pagination={pagination}
+                className="bg-blackDesign"
+            >
+            <div className="swiper-wrapper ">
+            {data?.map((item) => 
+                <SwiperSlide className="grid grid-cols-1 mb-6 md:grid-cols-2 " key={item._id} >
+                    <div id='swiperSlide' className="md:max-w-md md:col-start-2 md:mx-auto md:my-6 "  >
+                    <Image url={item.cartel} alt={item.title} variant={"rounded"}/>
                     </div>
-                </div>
+                    <div className="px-4 py-4 grid grid-cols-1 gap-4 md:gap-8 md:row-start-1 md:ml-32 md:my-auto ">
+                        <div>   
+                            <SliderText data={item}/>
+                        </div>
+                        <Link to={`/booking/${item._id}`}>
+                            <BookingBtn text={"Reservar"} variant={"gray"}/>
+                        </Link> 
+                    </div>
+                </SwiperSlide>)}
             </div>
+            </Swiper> 
         </>
     )
 };
 
-export default Slider;
+export default HomeSlider;

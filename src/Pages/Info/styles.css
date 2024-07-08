@@ -1,0 +1,13 @@
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+@media screen and (max-width: 480px) {
+    .parent{
+      flex-direction: column;
+}
+
+}
+
+@media screen and (min-width: 481px) {
+}
