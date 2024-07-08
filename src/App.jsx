@@ -1,7 +1,7 @@
 import React from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import BookingPage from './Pages/BookingPage/BookingPage'
-import Info from './Pages/Info/Info'
+import Info from './Pages/InfoPage/InfoPage'
 import ErrorPage from './Pages/ErrorPage/ErrorPage'
 import Layout from './Layout/Layout'
 import Home from './Pages/Home/Home'

@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Info = () => {
+const InfoPage = () => {
   return (
     <div>Info</div>
   )
 }
 
-export default Info
+export default InfoPage
