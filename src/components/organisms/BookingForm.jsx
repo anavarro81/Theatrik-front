@@ -11,6 +11,12 @@ const BookingForm = ({play}) => {
 
   const formatedDate = formatDate(play.date);
 
+  let url_base = "http://localhost:5002"
+
+  if (import.meta.env.MODE == 'production') {
+    url_base = 'https://theatrik.vercel.app/'
+  }
+
   const {
     register,
     handleSubmit,
@@ -18,14 +24,34 @@ const BookingForm = ({play}) => {
   } = useForm();
 
   const onSubmit = (data) => {
+    
     console.log(data);
 
-    fetch ('http://localhost:5002/mail/sendmail', {
+    console.log("El tipo de datos es: ", typeof data);
+
+    console.log('play > ', play)
+
+    
+    const emailData = {
+      tittle: play.title, 
+      date: formatedDate,
+      place: play.place,  
+      company: play.company_name,
+      ...data 
+
+    }
+
+    console.log('emailData ', emailData);
+
+    
+
+//    fetch ('http://localhost:5002/mail/sendmail', {
+      fetch (`${url_base}/mail/sendmail` ,{
       method: 'POST',
       headers: {
         "Content-Type": "application/json",
       }, 
-      body: JSON.stringify(data)
+      body: JSON.stringify(emailData)
     })
     
   }
