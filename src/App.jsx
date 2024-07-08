@@ -41,6 +41,20 @@ const router = createBrowserRouter([
       },
 
       {
+        path: "/info/:id",
+        element: <InfoPage />,
+        
+        loader: async ({ params }) => {
+          return fetch(`${url_base}/play/getPlay/${params.id}`);        
+        },      
+
+        
+
+
+      },
+
+
+      {
         path: "/booking/:id",
         element: <BookingPage />,
         loader: async ({ params }) => {
@@ -50,32 +64,6 @@ const router = createBrowserRouter([
         },
       },
 
-      {
-        path: "/info/:id",
-        element: <InfoPage />,
-        
-        // loader: ({ params }) => {          
-        //   //return fetch(`http://localhost:5002/play/getPlay/${params.id}`);
-        //   return fetch(`${url_base}/play/getPlay/${params.id}`);
-        loader: async ({ params }) => {
-
-          try {            
-
-            const resp = await fetch(`${url_base}/play/getPlay/${params.id}`)
-            const plays = await resp.json()
-            return plays
-            
-          } catch (error) {
-            console.log('error en info: ', error );
-          }
-        
-        },
-        
-
-        
-
-
-      },
 
       {
 
