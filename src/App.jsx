@@ -57,29 +57,22 @@ const router = createBrowserRouter([
         // loader: ({ params }) => {          
         //   //return fetch(`http://localhost:5002/play/getPlay/${params.id}`);
         //   return fetch(`${url_base}/play/getPlay/${params.id}`);
+        loader: async ({ params }) => {
 
+          try {            
+
+            const resp = await fetch(`${url_base}/play/getPlay/${params.id}`)
+            const plays = await resp.json()
+            return plays
+            
+          } catch (error) {
+            console.log('error en info: ', error );
+          }
         
-
-        
-
-        // },
-
-        loader: async ({params})=> {
-
-          console.log(`Estoy en info Url base ${url_base}  params.id ${params.id} ` )
-    
-          const resp = await fetch(`${url_base}/play/getPlay/${params.id}`)
-          
-          console.log('resp ', resp);  
-
-
-          const plays = await resp.json()
-
-          console.log('plays > ', plays);
-
-          return plays    
-          
         },
+        
+
+        
 
 
       },
