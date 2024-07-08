@@ -13,6 +13,7 @@ export function PlaysProvider({ children }) {
 
   // Función para obtener todas las obras de teatro desde el servidor
   const getPlays = () => {
+
     
     let url_base = "http://localhost:5002"
 
@@ -29,6 +30,7 @@ export function PlaysProvider({ children }) {
   };
 
   const getData = () => {
+
     
     let url_base = "http://localhost:5002"
 
@@ -38,7 +40,9 @@ export function PlaysProvider({ children }) {
   
     // fetch("http://localhost:5002/play/getAllPlays")
 
-    fetch("http://localhost:5002/play/getAllPlays")
+
+
+    fetch(`${url_base}/play/getAllPlays`)
       .then((res) =>  res.json() )
       .then((data) => {
         

@@ -16,8 +16,6 @@ if (import.meta.env.MODE == 'production') {
   url_base = 'https://theatrik.vercel.app/'
 
 }
-     
-
 
 const router = createBrowserRouter([
   {
@@ -29,6 +27,7 @@ const router = createBrowserRouter([
         index: true,
         element: <Home />,
         loader: async () => {
+
           // return fetch("http://localhost:5002/play/getAllPlays");
           return fetch(`${url_base}/play/getAllPlays`);
         },
@@ -38,6 +37,7 @@ const router = createBrowserRouter([
         path: "/booking/:id",
         element: <BookingPage />,
         loader: async ({ params }) => {
+
           //return fetch(`http://localhost:5002/play/getPlay/${params.id}`);
           return fetch(`${url_base}/play/getPlay/${params.id}`);
         },
@@ -47,8 +47,10 @@ const router = createBrowserRouter([
         path: "/info/:id",
         element: <Info />,
         loader: ({ params }) => {
+
           //return fetch(`http://localhost:5002/play/getPlay/${params.id}`);
           return fetch(`${url_base}/play/getPlay/${params.id}`);
+
 
         },
       },
@@ -62,9 +64,6 @@ const router = createBrowserRouter([
     ],
   },
 ]);
-
-console.log('import.meta.env.MODE',  import.meta.env.MODE);
-console.log('import.meta.env.BASE_URL ', import.meta.env.BASE_URL);
 
 const App = () => {
   return (
