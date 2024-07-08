@@ -12,7 +12,7 @@ import "./styles.css";
 
 const Info = () => {
   const play = useLoaderData();
-  const company = play.company[0];
+  
 
   const h2 = "text-[20px] mb-px ml-1";
 
