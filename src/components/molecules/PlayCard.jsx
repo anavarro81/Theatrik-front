@@ -36,12 +36,15 @@ const PlayCard = ({play}) => {
 
         <div>
           <div className="text-center">
-            <Text
+            {/* <Text
               text={"Más información"}
               variant={"link"}
               type={"link"}
               url={`/info/${play._id}`}
-            />
+            /> */}
+
+            <Link to={`/info/${play._id}`} > Mas informaciooon </Link>
+
           </div>
         </div>
       </div>
