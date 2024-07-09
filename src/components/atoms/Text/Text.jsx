@@ -1,6 +1,7 @@
 import React from 'react'
 import classnames from "classnames"
 import { usePlays } from '../../../Providers/PlaysProvider'
+import { Link } from 'react-router-dom'
 
 
 const Text = ({text, variant, type, url, id }) => {
@@ -29,10 +30,9 @@ const Text = ({text, variant, type, url, id }) => {
 
   return (
   <>
-    { type === "link" ? <a href={url} className={textClasses} > {text} </a> : <p className={textClasses} onClick={handleClick} id={id}> {text} </p>}
-
-    
-
+    { type === "link" ?       
+      <Link to={url}> <p className={textClasses}> {text} </p> </Link>            
+    : <p className={textClasses} onClick={handleClick} id={id}> {text} </p>}
     </>  
   )
 }
