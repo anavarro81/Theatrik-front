@@ -8,7 +8,7 @@ import Home from './Pages/Home/Home'
 import SearchResultsPage from './Pages/SearchResultsPage/SearchResultsPage'
 import { PlaysProvider } from './Providers/PlaysProvider'
 import '../src/css/main.css'
-
+import ConfirmationPage from './Pages/ConfirmationPage/ConfirmationPage'
 
 let url_base = "http://localhost:5002"
 
@@ -47,12 +47,7 @@ const router = createBrowserRouter([
         loader: async ({ params }) => {
           return fetch(`${url_base}/play/getPlay/${params.id}`);        
         },      
-
-        
-
-
       },
-
 
       {
         path: "/booking/:id",
@@ -64,11 +59,16 @@ const router = createBrowserRouter([
         },
       },
 
-
       {
 
         path: "/search",
         element: <SearchResultsPage/>
+      },
+
+      {
+        path: "/confirmation",
+        element: <ConfirmationPage/>
+
       },
 
     ],
