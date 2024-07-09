@@ -222,10 +222,10 @@ const BookingForm = ({play}) => {
                   
                   <button 
                   type='submit'
-                  className='bg-orangeDesign  text-white font-bold py-2 px-4 rounded-full inline-block h-[42px] w-full'
+                  className='w-full bg-orangeDesign  text-black font-bold py-2 px-10 rounded-lg inline-block h-[42px] lg:w-auto '
                   
                   > 
-                  Reservasssr 
+                  Reservar
                   
                   </button>
                   
