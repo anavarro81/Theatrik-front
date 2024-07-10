@@ -18,9 +18,12 @@ const PlayGallery = ({plays}) => {
   return (
     <> 
     <Title type="H2" text={"Cartelera"}/>
+    <div className='container mx-auto px-4 my-8'> 
     <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 xl:grid-cols-4' >
       {currentPlays?.map((play) => <PlayCard key={play._id} play={play}/>)}
     </div>
+    </div>
+
     <Pagination
                 totalPlays={plays.length}
                 playsPerPage={playsPerPage}

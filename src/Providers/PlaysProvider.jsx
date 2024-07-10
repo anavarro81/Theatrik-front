@@ -88,6 +88,8 @@ export function PlaysProvider({ children }) {
        return play[searchTerm].includes(searchFor);
      });
 
+     console.log('result ', result);
+
      setFilteredPlays(result);
    };
 
