@@ -20,7 +20,11 @@ const PlayCard = ({play}) => {
       <Image variant={"imgFilter"} url={ImagenCartel} alt={"imagen obra"} />
 
       <div id="body-card" className="px-3 py-1 space-y-2 text-base">
+        
         <Title type={"H2"} variant={"card-title-white"} text={play.title} />
+
+        {/* <h2 className='text-white '> {play.title} </h2> */}
+        
         <Title type={"H3"} variant={"orange"} text={play.company_name} />
         <Text text={formatedDate} variant={"white"} />
 

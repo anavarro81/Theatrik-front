@@ -9,7 +9,7 @@ const ConfirmationPage = () => {
       </header>
       <div className='my-6 text-center'>
         <BsCheckCircleFill className='mx-auto text-6xl text-green-500' />
-        <p className='mt-4 text-lg text-gray-600'>Se ha enviado un correo con los datos de esta a la dirección que nos has facilitado. Si no lo ves, por favor, revisa tu carpeta de spam.</p>
+        <p className='mt-4 text-lg text-gray-600'>Te hemos enviado un correo a la direccion indicada. Si no lo ves, por favor, revisa tu carpeta de spam.</p>
         <p className='mt-2 text-lg text-gray-600'>Las entradas no están todavía confirmadas. La asociación se pondrá en contacto contigo lo antes posible para hacerlo.</p>
         <p className='mt-4 font-semibold text-lg text-gray-700'>¡Gracias por venir a la muestra!</p>
       </div>

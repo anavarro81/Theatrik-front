@@ -4,12 +4,14 @@ import Title from '../atoms/Title/Title';
 import { useForm } from 'react-hook-form';
 import Icon from "../atoms/Icon/Icon"
 import PlayInfoCard from '../molecules/PlayInfoCard';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { formatDate } from '../../../utils/formatDate'
 
 const BookingForm = ({play}) => {
 
   const formatedDate = formatDate(play.date);
+
+  const navigate = useNavigate();
 
 
   let url_base = "http://localhost:5002"
@@ -44,9 +46,6 @@ const BookingForm = ({play}) => {
 //    fetch ('http://localhost:5002/mail/sendmail', {
       fetch (`${url_base}/mail/sendmail` ,{
 
-
-
-
       method: 'POST',
       headers: {
         "Content-Type": "application/json",
@@ -54,6 +53,15 @@ const BookingForm = ({play}) => {
 
       body: JSON.stringify(emailData)
 
+    }).then (response => {
+      
+      console.log('Respuesta el envio: ', response);
+
+      if (response.ok) {
+        navigate(`/confirmation/`)
+      } else {
+        
+      }
     })
     
   }
